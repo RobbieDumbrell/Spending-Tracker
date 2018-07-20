@@ -17,12 +17,25 @@ category1 = Category.new({
 transaction1 = Transaction.new({
   'category_id' => category1.id,
   'merchant_id' => merchant1.id,
+  'amount_spent' => 30
+  })
+transaction2 = Transaction.new({
+  'category_id' => category1.id,
+  'merchant_id' => merchant1.id,
   'amount_spent' => 25
   })
+transaction3 = Transaction.new({
+  'category_id' => category1.id,
+  'merchant_id' => merchant1.id,
+  'amount_spent' => 40
+  })
+
 
 # transaction1.save()
+# transaction2.save()
+# transaction3.save()
 
-# found_merchant = Merchant.find(2)
+found_merchant = Merchant.find(1)
 # found_category = Category.find(3)
 # found_transaction = Transaction.find(4)
 
@@ -52,3 +65,6 @@ transaction1 = Transaction.new({
 # Merchant.delete_all()
 # Category.delete_all()
 # Transaction.delete_all()
+
+# p found_merchant.all_transactions
+p found_merchant.all_categories()
