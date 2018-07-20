@@ -35,8 +35,8 @@ transaction3 = Transaction.new({
 # transaction2.save()
 # transaction3.save()
 
-found_merchant = Merchant.find(1)
-# found_category = Category.find(3)
+# found_merchant = Merchant.find(1)
+found_category = Category.find(2)
 # found_transaction = Transaction.find(4)
 
 # p Merchant.all()
@@ -66,5 +66,8 @@ found_merchant = Merchant.find(1)
 # Category.delete_all()
 # Transaction.delete_all()
 
-# p found_merchant.all_transactions
-p found_merchant.all_categories()
+# p found_merchant.all_transactions()
+# p found_merchant.all_categories()
+
+# p found_category.all_transactions()
+p found_category.all_merchants()

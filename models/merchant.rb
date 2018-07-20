@@ -15,8 +15,8 @@ class Merchant
   # Create
   def save()
     sql = "INSERT INTO merchants (name)
-          VALUES ($1)
-          RETURNING id;"
+    VALUES ($1)
+    RETURNING id;"
     values = [@name]
     result = SqlRunner.run(sql, values) # array of hash with id number.
     id_hash = result.first
@@ -40,8 +40,8 @@ class Merchant
   # Update
   def update()
     sql = "UPDATE merchants
-          SET name = $1
-          WHERE id = $2;"
+    SET name = $1
+    WHERE id = $2;"
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
@@ -67,9 +67,9 @@ class Merchant
   # Method to bring back all transactions associated with that merchant.
   def all_transactions()
     sql = "SELECT transactions.* FROM transactions
-          INNER JOIN merchants
-	          ON transactions.merchant_id = merchants.id
-          WHERE transactions.merchant_id = $1;"
+    INNER JOIN merchants
+    ON transactions.merchant_id = merchants.id
+    WHERE transactions.merchant_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values) # array of transaction hashes.
     return results.map { |transaction_hash| Transaction.new(transaction_hash) }
@@ -78,16 +78,15 @@ class Merchant
   # Method to bring back all category types associated with that merchant (based on previously inputted transactions)
   def all_categories()
     sql = "SELECT categories.* FROM categories
-          INNER JOIN transactions
-	         ON categories.id = transactions.category_id
-          INNER JOIN merchants
-	         ON transactions.merchant_id = merchants.id
-          WHERE merchants.id = $1;"
+    INNER JOIN transactions
+    ON categories.id = transactions.category_id
+    INNER JOIN merchants
+    ON transactions.merchant_id = merchants.id
+    WHERE merchants.id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     all_categories = results.map { |category_hash| Category.new(category_hash) }
-    category_type = all_categories.map { |category| category.type }
-    return category_type.uniq
+    return all_categories
   end
 
 end

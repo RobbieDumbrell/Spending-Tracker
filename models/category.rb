@@ -12,14 +12,14 @@ class Category
 
   # Create
   def save()
-      sql = "INSERT INTO categories (type)
-            VALUES ($1)
-            RETURNING id;"
-      values = [@type]
-      result = SqlRunner.run(sql, values) # array of hash with id number.
-      id_hash = result.first
-      @id = id_hash['id'].to_i
-    end
+    sql = "INSERT INTO categories (type)
+    VALUES ($1)
+    RETURNING id;"
+    values = [@type]
+    result = SqlRunner.run(sql, values) # array of hash with id number.
+    id_hash = result.first
+    @id = id_hash['id'].to_i
+  end
 
   # Read
   def self.find(id)
@@ -38,8 +38,8 @@ class Category
   # Update
   def update()
     sql = "UPDATE categories
-          SET type = $1
-          WHERE id = $2;"
+    SET type = $1
+    WHERE id = $2;"
     values = [@type, @id]
     SqlRunner.run(sql, values)
   end
@@ -60,6 +60,30 @@ class Category
   def self.delete_all
     sql = "DELETE FROM categories;"
     SqlRunner.run(sql)
+  end
+
+  # Method to bring back all transactions associated with that category.
+  def all_transactions()
+    sql = "SELECT transactions.* FROM transactions
+    INNER JOIN categories
+    ON transactions.category_id = categories.id
+    WHERE transactions.category_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values) # array of transaction hashes.
+    return results.map { |transaction_hash| Transaction.new(transaction_hash) }
+  end
+
+  def all_merchants()
+    sql = "SELECT merchants.* FROM merchants
+    INNER JOIN transactions
+    ON merchants.id = transactions.merchant_id
+    INNER JOIN categories
+    ON transactions.category_id = categories.id
+    WHERE categories.id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    all_merchants = results.map { |merchant_hash| Merchant.new(merchant_hash) }
+    return all_merchants
   end
 
 

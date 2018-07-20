@@ -14,14 +14,14 @@ class Transaction
 
   # Create
   def save()
-      sql = "INSERT INTO transactions (merchant_id, category_id, amount_spent)
-            VALUES ($1, $2, $3)
-            RETURNING id;"
-      values = [@merchant_id, @category_id, @amount_spent]
-      result = SqlRunner.run(sql, values) # array of hash with id number.
-      id_hash = result.first
-      @id = id_hash['id'].to_i
-    end
+    sql = "INSERT INTO transactions (merchant_id, category_id, amount_spent)
+    VALUES ($1, $2, $3)
+    RETURNING id;"
+    values = [@merchant_id, @category_id, @amount_spent]
+    result = SqlRunner.run(sql, values) # array of hash with id number.
+    id_hash = result.first
+    @id = id_hash['id'].to_i
+  end
 
   # Read
   def self.find(id)
@@ -40,8 +40,8 @@ class Transaction
   # Update
   def update()
     sql = "UPDATE transactions
-          SET (merchant_id, category_id, amount_spent) = ($1, $2, $3)
-          WHERE id = $4;"
+    SET (merchant_id, category_id, amount_spent) = ($1, $2, $3)
+    WHERE id = $4;"
     values = [@merchant_id, @category_id, @amount_spent, @id]
     SqlRunner.run(sql, values)
   end
@@ -63,7 +63,5 @@ class Transaction
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)
   end
-
-
 
 end
