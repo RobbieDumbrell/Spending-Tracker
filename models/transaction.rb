@@ -2,6 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Transaction
 
+  attr_writer :merchant_id, :category_id, :amount_spent
   attr_reader :id, :merchant_id, :category_id, :amount_spent
 
   def initialize(options)
@@ -36,10 +37,14 @@ class Transaction
     return results.map { |transaction_hash| Transaction.new(transaction_hash) } # array of Transaction objects.
   end
 
-
-
   # Update
-
+  def update()
+    sql = "UPDATE transactions
+          SET (merchant_id, category_id, amount_spent) = ($1, $2, $3)
+          WHERE id = $4;"
+    values = [@merchant_id, @category_id, @amount_spent, @id]
+    SqlRunner.run(sql, values)
+  end
 
 
   # Delete

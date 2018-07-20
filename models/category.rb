@@ -2,6 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Category
 
+  attr_writer :type
   attr_reader :id, :type
 
   def initialize(options)
@@ -34,9 +35,14 @@ class Category
     return results.map { |category_hash| Category.new(category_hash) } # array of Category objects.
   end
 
-
   # Update
-
+  def update()
+    sql = "UPDATE categories
+          SET type = $1
+          WHERE id = $2;"
+    values = [@type, @id]
+    SqlRunner.run(sql, values)
+  end
 
 
   # Delete

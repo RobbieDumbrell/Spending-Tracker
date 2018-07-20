@@ -22,10 +22,21 @@ transaction1 = Transaction.new({
 
 # transaction1.save()
 
-# p Merchant.find(1)
-# p Category.find(1)
-# p Transaction.find(2)
+found_merchant = Merchant.find(1)
+found_category = Category.find(1)
+found_transaction = Transaction.find(2)
 
-p Merchant.all()
-p Category.all()
-p Transaction.all()
+# p Merchant.all()
+# p Category.all()
+# p Transaction.all()
+
+# found_merchant.name = 'Ebay'
+# found_merchant.update()
+
+# found_category.type = 'Groceries'
+# found_category.update()
+
+found_transaction.merchant_id = found_merchant.id
+found_transaction.category_id = found_category.id
+found_transaction.amount_spent = 1000
+found_transaction.update()

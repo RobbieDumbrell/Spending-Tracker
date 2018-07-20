@@ -2,6 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Merchant
 
+  attr_writer :name
   attr_reader :id, :name
 
   def initialize(options)
@@ -34,8 +35,14 @@ class Merchant
     return results.map { |merchant_hash| Merchant.new(merchant_hash) } # array of Merchant objects.
   end
 
-
   # Update
+  def update()
+    sql = "UPDATE merchants
+          SET name = $1
+          WHERE id = $2;"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
 
 
 
