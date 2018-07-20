@@ -21,7 +21,18 @@ class Category
     end
 
   # Read
+  def self.find(id)
+    sql = "SELECT * FROM categories WHERE id = $1;"
+    values = [id]
+    result = SqlRunner.run(sql, values) # array of hash with category information.
+    return Category.new(result.first) # creates Category object of found category.
+  end
 
+  def self.all()
+    sql = "SELECT * FROM categories;"
+    results = SqlRunner.run(sql) # array of category hashes.
+    return results.map { |category_hash| Category.new(category_hash) } # array of Category objects.
+  end
 
 
   # Update

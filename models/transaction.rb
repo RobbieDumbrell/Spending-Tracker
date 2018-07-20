@@ -23,6 +23,18 @@ class Transaction
     end
 
   # Read
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = $1;"
+    values = [id]
+    result = SqlRunner.run(sql, values) # array of hash with transactions information.
+    return Transaction.new(result.first) # creates Transaction object of found transactions.
+  end
+
+  def self.all()
+    sql = "SELECT * FROM transactions;"
+    results = SqlRunner.run(sql) # array of transaction hashes.
+    return results.map { |transaction_hash| Transaction.new(transaction_hash) } # array of Transaction objects.
+  end
 
 
 

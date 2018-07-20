@@ -21,7 +21,18 @@ class Merchant
   end
 
   # Read
+  def self.find(id)
+    sql = "SELECT * FROM merchants WHERE id = $1;"
+    values = [id]
+    result = SqlRunner.run(sql, values) # array of hash with merchant information.
+    return Merchant.new(result.first) # creates Merchant object of found merchant.
+  end
 
+  def self.all()
+    sql = "SELECT * FROM merchants;"
+    results = SqlRunner.run(sql) # array of merchant hashes.
+    return results.map { |merchant_hash| Merchant.new(merchant_hash) } # array of Merchant objects.
+  end
 
 
   # Update
