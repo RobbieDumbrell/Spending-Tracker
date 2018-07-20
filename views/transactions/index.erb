@@ -1,0 +1,9 @@
+<h1>All Transactions</h1>
+
+<% for transaction in @all_transactions %>
+  <ul>
+    <li><%= Merchant.find(transaction.merchant_id).name %></li>
+    <li><%= Category.find(transaction.category_id).type %></li>
+    <li><%= transaction.amount_spent %></li>
+  </ul>
+<% end %>
