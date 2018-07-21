@@ -7,3 +7,9 @@
     <li><%= transaction.amount_spent %></li>
   </ul>
 <% end %>
+
+<form class="" action="/categories/<%= @specified_category.id %>/delete/" method="post">
+
+  <input type="submit" value="DELETE CATEGORY">
+
+</form>

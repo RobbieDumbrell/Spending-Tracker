@@ -49,3 +49,9 @@ post '/transactions/:id/?' do
   changing_transaction.update()
   redirect to '/transactions/' + params['id']
 end
+
+# Delete Transaction
+post '/transactions/:id/delete/?' do
+  Transaction.delete_id(params['id'].to_i)
+  redirect to '/transactions/'
+end

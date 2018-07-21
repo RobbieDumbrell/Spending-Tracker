@@ -40,3 +40,9 @@ post '/merchants/:id/?' do
   changing_merchant.update()
   redirect to '/merchants/' + params['id']
 end
+
+# Delete Merchant
+post '/merchants/:id/delete/?' do
+  Merchant.delete_id(params['id'].to_i)
+  redirect to '/merchants/'
+end

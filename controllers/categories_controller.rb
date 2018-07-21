@@ -40,3 +40,9 @@ post '/categories/:id/?' do
   changing_category.update()
   redirect to '/categories/' + params['id']
 end
+
+# Delete Category
+post '/categories/:id/delete/?' do
+  Category.delete_id(params['id'].to_i)
+  redirect to '/categories/'
+end
