@@ -6,6 +6,12 @@
   <li><%= @specified_transaction.amount_spent %></li>
 </ul>
 
+<form class="" action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
+
+  <input type="submit" value="EDIT TRANSACTION">
+
+</form>
+
 <form class="" action="/transactions/<%= @specified_transaction.id %>/delete/" method="post">
 
   <input type="submit" value="DELETE TRANSACTION">

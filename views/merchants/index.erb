@@ -1,8 +1,9 @@
 <h1>Saved Merchants</h1>
-<ul>
-  <% for merchant in @all_merchants %>
+<% for merchant in @all_merchants %>
+  <ul>
     <li><%= merchant.name %></li>
-  <% end %>
-</ul>
+    <li><a href="/merchants/<%= merchant.id %>">View</a></li>
+  </ul>
+<% end %>
 
 <p><a href="/merchants/new">Add Merchant</a></p>

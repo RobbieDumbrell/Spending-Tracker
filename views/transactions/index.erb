@@ -5,6 +5,7 @@
     <li><%= Merchant.find(transaction.merchant_id).name %></li>
     <li><%= Category.find(transaction.category_id).type %></li>
     <li><%= transaction.amount_spent %></li>
+    <li><a href="/transactions/<%= transaction.id %>">View</a></li>
   </ul>
 <% end %>
 
