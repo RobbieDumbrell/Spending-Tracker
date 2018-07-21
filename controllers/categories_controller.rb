@@ -27,3 +27,16 @@ get '/categories/:id/?' do
   @category_transactions = @specified_category.all_transactions
   erb(:"categories/show")
 end
+
+# Edit Category
+get '/categories/:id/edit/?' do
+  @specified_category = Category.find(params['id'].to_i)
+  erb(:"categories/edit")
+end
+
+# Update Category
+post '/categories/:id/?' do
+  changing_category = Category.new(params)
+  changing_category.update()
+  redirect to '/categories/' + params['id']
+end

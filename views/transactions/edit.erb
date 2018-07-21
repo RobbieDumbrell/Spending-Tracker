@@ -1,0 +1,32 @@
+<h1>Edit Transaction</h1>
+
+<h4>Existing Transaction:</h4>
+
+<ul>
+  <li>Merchant Name: <%= @current_merchant.name %></li>
+  <li>Category Type: <%= @current_category.type %></li>
+  <li>Amount: <%= @specified_transaction.amount_spent %></li>
+</ul>
+
+<form action="/transactions/<%= @specified_transaction.id %>" method="post">
+
+  <label for="merchant-select">Select Merchant</label>
+  <select id="merchant-select" name="merchant_id">
+    <% for merchant in @all_merchants %>
+    <option value="<%= merchant.id %>" <%= 'selected' if @specified_transaction.merchant_id == merchant.id %>><%= merchant.name %></option>
+    <% end %>
+  </select>
+
+  <label for="category-select">Select Category</label>
+  <select id="category-select" name="category_id">
+    <% for category in @all_categories %>
+    <option value="<%= category.id %>" <%= 'selected' if @specified_transaction.category_id == category.id %>><%= category.type %></option>
+    <% end %>
+  </select>
+
+  <label for="amount-spent">Amount Spent</label>
+  <input type="number" name="amount_spent" value="<%= @specified_transaction.amount_spent %>">
+
+  <input type="submit" value="UPDATE TRANSACTION">
+
+</form>

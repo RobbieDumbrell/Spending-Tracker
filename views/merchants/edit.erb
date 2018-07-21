@@ -1,0 +1,12 @@
+<h1>Edit Merchant</h1>
+
+<h4>Current Merchant Name: <%= @specified_merchant.name %></h4>
+
+<form class="" action="/merchants/<%= @specified_merchant.id %>" method="post">
+
+  <label for="merchant_name">New Merchant Name:</label>
+  <input id="merchant_name" type="text" name="name">
+
+  <input type="submit" value="UPDATE MERCHANT">
+
+</form>

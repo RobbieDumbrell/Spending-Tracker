@@ -32,3 +32,20 @@ get '/transactions/:id/?' do
   @category = Category.find(@specified_transaction.category_id)
   erb(:"transactions/show")
 end
+
+# Edit Transaction
+get '/transactions/:id/edit/?' do
+  @all_merchants = Merchant.all()
+  @all_categories = Category.all()
+  @specified_transaction = Transaction.find(params['id'].to_i)
+  @current_merchant = Merchant.find(@specified_transaction.merchant_id)
+  @current_category = Category.find(@specified_transaction.category_id)
+  erb(:"transactions/edit")
+end
+
+# Update Transaction
+post '/transactions/:id/?' do
+  changing_transaction = Transaction.new(params)
+  changing_transaction.update()
+  redirect to '/transactions/' + params['id']
+end
