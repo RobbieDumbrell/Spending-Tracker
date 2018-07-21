@@ -64,4 +64,18 @@ class Transaction
     SqlRunner.run(sql)
   end
 
+  def self.total_all
+    all_transactions = Transaction.all()
+    total_amount_spent = 0
+    for transaction in all_transactions
+      amount = transaction.amount_spent.to_i
+      total_amount_spent += amount
+    end
+    return total_amount_spent
+  end
+
+  # def self.total_month(month)
+  #
+  # end
+
 end
