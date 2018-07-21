@@ -20,3 +20,10 @@ post '/categories/?' do
   @new_category.save()
   redirect to '/categories/?'
 end
+
+# Show Category
+get '/categories/:id/?' do
+  @specified_category = Category.find(params['id'].to_i)
+  @category_transactions = @specified_category.all_transactions
+  erb(:"categories/show")
+end

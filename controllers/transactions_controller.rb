@@ -24,3 +24,11 @@ post '/transactions/?' do
   @new_transaction.save()
   redirect to '/transactions/?'
 end
+
+# Show Transaction
+get '/transactions/:id/?' do
+  @specified_transaction = Transaction.find(params['id'].to_i)
+  @merchant = Merchant.find(@specified_transaction.merchant_id)
+  @category = Category.find(@specified_transaction.category_id)
+  erb(:"transactions/show")
+end

@@ -20,3 +20,10 @@ post '/merchants/?' do
   @new_merchant.save()
   redirect to '/merchants/?'
 end
+
+# Show Merchant
+get '/merchants/:id/?' do
+  @specified_merchant = Merchant.find(params['id'].to_i)
+  @merchant_transactions = @specified_merchant.all_transactions
+  erb(:"merchants/show")
+end

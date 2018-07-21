@@ -1,0 +1,9 @@
+<h1>Merchant Name: <%= @specified_merchant.name %></h1>
+
+<% for transaction in @merchant_transactions %>
+  <% category = Category.find(transaction.category_id) %>
+  <ul>
+    <li><%= category.type %></li>
+    <li><%= transaction.amount_spent %></li>
+  </ul>
+<% end %>
