@@ -64,6 +64,7 @@ class Transaction
     SqlRunner.run(sql)
   end
 
+  # Method to total up all of the transactions currently in the database.
   def self.total_all
     all_transactions = Transaction.all()
     total_amount_spent = 0
