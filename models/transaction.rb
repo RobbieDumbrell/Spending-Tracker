@@ -89,8 +89,14 @@ class Transaction
     return total_amount_spent
   end
 
-  # def self.total_month(month)
-  #   month_transactions =
-  # end
+  def self.total_month(my_month)
+    month_transactions = Transaction.month_all(my_month)
+    month_amount_spent = 0
+    for transaction in month_transactions
+      amount = transaction.amount_spent.to_i
+      month_amount_spent += amount
+    end
+    return month_amount_spent
+  end
 
 end
