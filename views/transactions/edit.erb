@@ -6,6 +6,7 @@
   <li>Merchant Name: <%= @current_merchant.name %></li>
   <li>Category Type: <%= @current_category.type %></li>
   <li>Amount: <%= @specified_transaction.amount_spent %></li>
+  <li>Entry Date: <%= @specified_transaction.entry_date %></li>
 </ul>
 
 <form action="/transactions/<%= @specified_transaction.id %>" method="post">
@@ -26,6 +27,9 @@
 
   <label for="amount-spent">Amount Spent</label>
   <input type="number" name="amount_spent" value="<%= @specified_transaction.amount_spent %>">
+
+  <label for="entry-date">Entry Date</label>
+  <input type="date" name="entry_date" value="<%= @specified_transaction.entry_date %>" >
 
   <input type="submit" value="UPDATE TRANSACTION">
 

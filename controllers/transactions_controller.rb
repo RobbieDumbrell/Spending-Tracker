@@ -12,7 +12,7 @@ get '/transactions/?' do
   erb(:"transactions/index")
 end
 
-# Transaction by month
+# Transactions by Month
 get '/transactions/month/:month/?' do
   @month_transactions = Transaction.month_all(params['month'].to_i)
   @month_total_spend = Transaction.total_month(params['month'].to_i)

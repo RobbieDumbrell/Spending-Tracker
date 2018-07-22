@@ -4,6 +4,7 @@
   <li><%= @merchant.name %></li>
   <li><%= @category.type %></li>
   <li><%= @specified_transaction.amount_spent %></li>
+  <li><%= @specified_transaction.entry_date %></li>
 </ul>
 
 <form class="" action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
