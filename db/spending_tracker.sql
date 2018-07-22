@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS merchants;
 DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS budgets;
 
 CREATE TABLE merchants (
   id SERIAL8 PRIMARY KEY,
@@ -17,5 +18,11 @@ CREATE TABLE transactions (
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
   category_id INT8 REFERENCES categories(id) ON DELETE CASCADE,
   amount_spent INT8,
-  entry_date DATE 
+  entry_date DATE
 );
+
+CREATE TABLE budgets (
+  id SERIAL8 PRIMARY KEY,
+  month VARCHAR(255),
+  budget INT8
+)

@@ -21,8 +21,8 @@ class Transaction
     RETURNING id;"
     values = [@merchant_id, @category_id, @amount_spent, @entry_date]
     result = SqlRunner.run(sql, values) # array of hash with id number.
-    hash = result.first
-    @id = hash['id'].to_i
+    id_hash = result.first
+    @id = id_hash['id'].to_i
   end
 
   # Read
