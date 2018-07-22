@@ -16,6 +16,7 @@ end
 get '/transactions/new/?' do
   @all_merchants = Merchant.all()
   @all_categories = Category.all()
+  @today_date = Date.today()
   erb(:"transactions/new")
 end
 

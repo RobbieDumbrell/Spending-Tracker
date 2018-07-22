@@ -1,26 +1,28 @@
 require_relative('../db/sql_runner.rb')
+require('date')
 
 class Transaction
 
-  attr_writer :merchant_id, :category_id, :amount_spent
-  attr_reader :id, :merchant_id, :category_id, :amount_spent
+  attr_writer :merchant_id, :category_id, :amount_spent, :entry_date
+  attr_reader :id, :merchant_id, :category_id, :amount_spent, :entry_date
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @merchant_id = options['merchant_id'].to_i
     @category_id = options['category_id'].to_i
     @amount_spent = options['amount_spent'].to_i
+    @entry_date = Date.parse(options['entry_date'])
   end
 
   # Create
   def save()
-    sql = "INSERT INTO transactions (merchant_id, category_id, amount_spent)
-    VALUES ($1, $2, $3)
+    sql = "INSERT INTO transactions (merchant_id, category_id, amount_spent, entry_date)
+    VALUES ($1, $2, $3, $4)
     RETURNING id;"
-    values = [@merchant_id, @category_id, @amount_spent]
+    values = [@merchant_id, @category_id, @amount_spent, @entry_date]
     result = SqlRunner.run(sql, values) # array of hash with id number.
-    id_hash = result.first
-    @id = id_hash['id'].to_i
+    hash = result.first
+    @id = hash['id'].to_i
   end
 
   # Read
@@ -37,12 +39,24 @@ class Transaction
     return results.map { |transaction_hash| Transaction.new(transaction_hash) } # array of Transaction objects.
   end
 
+  # Method to bring back all transactions relating to a given month.
+  # def self.month_all(my_month)
+  #   all_transactions = Transaction.all()
+  #   month_transactions = []
+  #   for transaction in all_transactions
+  #     if transaction.entry_time.mon == my_month
+  #       month_transactions << transaction
+  #     end
+  #   end
+  #   return month_transactions
+  # end
+
   # Update
   def update()
     sql = "UPDATE transactions
-    SET (merchant_id, category_id, amount_spent) = ($1, $2, $3)
-    WHERE id = $4;"
-    values = [@merchant_id, @category_id, @amount_spent, @id]
+    SET (merchant_id, category_id, amount_spent, entry_date) = ($1, $2, $3, $4)
+    WHERE id = $5;"
+    values = [@merchant_id, @category_id, @amount_spent, @entry_date, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -76,7 +90,7 @@ class Transaction
   end
 
   # def self.total_month(month)
-  #
+  #   month_transactions =
   # end
 
 end
