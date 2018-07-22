@@ -31,7 +31,7 @@ class Budget
   end
 
   def self.all()
-    sql = "SELECT * FROM budgets;"
+    sql = "SELECT * FROM budgets ORDER BY id;"
     results = SqlRunner.run(sql) # array of budget hashes.
     return results.map { |budget_hash| Budget.new(budget_hash) } # array of Budget objects.
   end
@@ -47,6 +47,6 @@ class Budget
 
   # Will never delete a budget month so don't need delete functions.
 
-  
+
 
 end
