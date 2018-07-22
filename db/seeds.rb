@@ -38,12 +38,13 @@ transaction1 = Transaction.new({
 
 # found_merchant = Merchant.find(2)
 # found_category = Category.find(2)
-# found_transaction = Transaction.find(2)
+found_transaction = Transaction.find(2)
 # # #
 # db_time =  found_transaction.entry_date
 # # # #
 # p db_time
 
+p found_transaction.entry_date.mon
 
 
 # p Merchant.all()
@@ -82,4 +83,4 @@ transaction1 = Transaction.new({
 
 # p Date.parse(db_time)
 
-p Date.today()
+# p Date.today()

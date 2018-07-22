@@ -1,6 +1,6 @@
-<h1>All Transactions</h1>
+<h1>Transactions By Month</h1>
 
-<% for transaction in @all_transactions %>
+<% for transaction in @month_transactions %>
   <ul>
     <li><%= Merchant.find(transaction.merchant_id).name %></li>
     <li><%= Category.find(transaction.category_id).type %></li>
@@ -9,11 +9,6 @@
     <li><a href="/transactions/<%= transaction.id %>">View</a></li>
   </ul>
 <% end %>
-
-<h4>Total Spend:</h4>
-<p><%= @all_total_spend %></p>
-
-<p><a href="/transactions/new">Add Transaction</a></p>
 
 <ul>
   <li><a href="/transactions/month/1">Jan</a></li>
@@ -29,3 +24,5 @@
   <li><a href="/transactions/month/11">Nov</a></li>
   <li><a href="/transactions/month/12">Dec</a></li>
 </ul>
+
+<p><a href="/transactions/new">Add Transaction</a></p>
