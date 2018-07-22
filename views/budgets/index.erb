@@ -1,0 +1,8 @@
+<h1>Monthly Budgets</h1>
+
+<% for budget in @all_budgets %>
+  <ul>
+    <li><%= budget.month %></li>
+    <li><%= budget.budget %></li>
+  </ul>
+<% end %>

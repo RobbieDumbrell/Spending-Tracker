@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/transaction')
 require_relative('../models/merchant')
 require_relative('../models/category')
+require_relative('../models/budget')
 also_reload('../models/*')
 
 # Index Transactions
@@ -16,6 +17,7 @@ end
 get '/transactions/month/:month/?' do
   @month_transactions = Transaction.month_all(params['month'].to_i)
   @month_total_spend = Transaction.total_month(params['month'].to_i)
+  @month_budget = Budget.find(params['month'].to_i)
   erb(:"transactions/index_by_month")
 end
 
