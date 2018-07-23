@@ -8,13 +8,13 @@
   </ul>
 <% end %>
 
-<form class="" action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
+<form action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
 
   <input type="submit" value="EDIT MERCHANT">
 
 </form>
 
-<form class="" action="/merchants/<%= @specified_merchant.id %>/delete/confirm/" method="get">
+<form action="/merchants/<%= @specified_merchant.id %>/delete/confirm/" method="get">
 
   <input type="submit" value="DELETE MERCHANT">
 
