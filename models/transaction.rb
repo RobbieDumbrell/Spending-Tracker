@@ -40,6 +40,18 @@ class Transaction
   end
 
   # Method to bring back all transactions relating to a given month.
+  def self.year_all(my_year)
+    all_transactions = Transaction.all()
+    year_transactions = []
+    for transaction in all_transactions
+      if transaction.entry_date.year == my_year
+        year_transactions << transaction
+      end
+    end
+    return year_transactions
+  end
+
+  # Method to bring back all transactions relating to a given month.
   def self.month_all(my_month)
     all_transactions = Transaction.all()
     month_transactions = []

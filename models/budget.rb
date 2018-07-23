@@ -3,20 +3,21 @@ require_relative('../db/sql_runner.rb')
 class Budget
 
   attr_writer :budget
-  attr_reader :id, :month, :budget
+  attr_reader :id, :month, :budget, :year
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @month = options['month']
     @budget = options['budget'].to_i
+    @year = options['year']
   end
 
   # Create
   def save()
-    sql = "INSERT INTO budgets (month, budget)
-    VALUES ($1, $2)
+    sql = "INSERT INTO budgets (month, budget, year)
+    VALUES ($1, $2, $3)
     RETURNING id;"
-    values = [@month, @budget]
+    values = [@month, @budget, @year]
     result = SqlRunner.run(sql, values) # array of hash with id number.
     id_hash = result.first
     @id = id_hash['id'].to_i

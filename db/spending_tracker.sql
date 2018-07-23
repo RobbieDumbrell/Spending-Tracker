@@ -24,5 +24,6 @@ CREATE TABLE transactions (
 CREATE TABLE budgets (
   id SERIAL8 PRIMARY KEY,
   month VARCHAR(255),
-  budget INT8
+  budget INT8,
+  year VARCHAR(255)
 )
