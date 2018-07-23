@@ -1,0 +1,9 @@
+<h2>Are you sure you want to delete the <%= @deleting_category.type %> category?</h2>
+
+<h2>All transactions linked to this category will also be deleted.</h2>
+
+<form class="" action="/categories/<%= @deleting_category.id %>/delete/" method="post">
+
+  <input type="submit" value="CONFIRM DELETE">
+
+</form>

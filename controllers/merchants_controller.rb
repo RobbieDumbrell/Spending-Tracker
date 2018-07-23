@@ -41,6 +41,12 @@ post '/merchants/:id/?' do
   redirect to '/merchants/' + params['id']
 end
 
+# Confirm Delete Merchant before actually deleting
+get '/merchants/:id/delete/confirm/?' do
+  @deleting_merchant = Merchant.find(params['id'].to_i)
+  erb(:"merchants/confirm_delete")
+end
+
 # Delete Merchant
 post '/merchants/:id/delete/?' do
   Merchant.delete_id(params['id'].to_i)

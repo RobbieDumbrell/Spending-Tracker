@@ -41,6 +41,12 @@ post '/categories/:id/?' do
   redirect to '/categories/' + params['id']
 end
 
+# Confirm Delete Category before actually deleting
+get '/categories/:id/delete/confirm/?' do
+  @deleting_category = Category.find(params['id'].to_i)
+  erb(:"categories/confirm_delete")
+end
+
 # Delete Category
 post '/categories/:id/delete/?' do
   Category.delete_id(params['id'].to_i)
