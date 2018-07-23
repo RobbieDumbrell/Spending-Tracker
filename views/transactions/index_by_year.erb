@@ -1,0 +1,22 @@
+<h1>Transactions By Year</h1>
+
+<ul>
+  <li><a href="/transactions/year/2018">2018</a></li>
+  <li><a href="/transactions/year/2019">2019</a></li>
+</ul>
+
+<% for transaction in @year_transactions %>
+  <ul>
+    <li><%= Merchant.find(transaction.merchant_id).name %></li>
+    <li><%= Category.find(transaction.category_id).type %></li>
+    <li><%= transaction.amount_spent %></li>
+    <li><%= transaction.entry_date%></li>
+    <li><a href="/transactions/<%= transaction.id %>">View</a></li>
+  </ul>
+<% end %>
+
+<h4>Total Year Spend:</h4>
+<p><%= @year_total_spend %></p>
+
+<h4>Total Year Budget:</h4>
+<p><%= @year_budget %></p>

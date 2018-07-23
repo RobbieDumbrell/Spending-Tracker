@@ -52,11 +52,11 @@ class Transaction
   end
 
   # Method to bring back all transactions relating to a given month.
-  def self.month_all(my_month)
+  def self.month_all(my_month, my_year)
     all_transactions = Transaction.all()
     month_transactions = []
     for transaction in all_transactions
-      if transaction.entry_date.mon == my_month
+      if transaction.entry_date.mon == my_month && transaction.entry_date.year == my_year
         month_transactions << transaction
       end
     end
@@ -99,6 +99,16 @@ class Transaction
       total_amount_spent += amount
     end
     return total_amount_spent
+  end
+
+  def self.total_year(my_year)
+    year_transactions = Transaction.year_all(my_year)
+    year_amount_spent = 0
+    for transaction in year_transactions
+      amount = transaction.amount_spent.to_i
+      year_amount_spent += amount
+    end
+    return year_amount_spent
   end
 
   def self.total_month(my_month)

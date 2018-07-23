@@ -1,5 +1,10 @@
 <h1>All Transactions</h1>
 
+<ul>
+  <li><a href="/transactions/year/2018">2018</a></li>
+  <li><a href="/transactions/year/2019">2019</a></li>
+</ul>
+
 <% for transaction in @all_transactions %>
   <ul>
     <li><%= Merchant.find(transaction.merchant_id).name %></li>

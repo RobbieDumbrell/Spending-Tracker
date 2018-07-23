@@ -48,6 +48,16 @@ class Budget
 
   # Will never delete a budget month so don't need delete functions.
 
-
+  # Method to bring back total budget of a specified year.
+  def self.total_year(my_year)
+    all_budgets = Budget.all()
+    budget_year_total = 0
+    for entry in all_budgets
+      if entry.year == my_year.to_s
+        budget_year_total += entry.budget.to_i
+      end
+    end
+    return budget_year_total
+  end
 
 end

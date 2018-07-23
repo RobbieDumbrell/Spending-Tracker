@@ -13,6 +13,14 @@ get '/transactions/?' do
   erb(:"transactions/index")
 end
 
+# Transactions by Year
+get '/transactions/year/:year/?' do
+  @year_transactions = Transaction.year_all(params['year'].to_i)
+  @year_total_spend = Transaction.total_year(params['year'].to_i)
+  @year_budget = Budget.total_year(params['year'])
+  erb(:"transactions/index_by_year")
+end
+
 # Transactions by Month
 get '/transactions/month/:month/?' do
   @month_transactions = Transaction.month_all(params['month'].to_i)
