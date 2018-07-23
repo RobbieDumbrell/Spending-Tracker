@@ -25,123 +25,147 @@ transaction1 = Transaction.new({
 transaction1.save()
 
 janbud = Budget.new({
-  'month' => 'January',
+  'month' => 1,
+  'month_name' => 'January',
   'budget' => 100,
   'year' => '2018'
   })
 febbud = Budget.new({
-  'month' => 'February',
+  'month' => 2,
+  'month_name' => 'February',
   'budget' => 100,
   'year' => '2018'
   })
 marbud = Budget.new({
-  'month' => 'March',
+  'month' => 3,
+  'month_name' => 'March',
   'budget' => 100,
   'year' => '2018'
   })
 aprbud = Budget.new({
-  'month' => 'April',
+  'month' => 4,
+  'month_name' => 'April',
   'budget' => 100,
   'year' => '2018'
   })
 maybud = Budget.new({
-  'month' => 'May',
+  'month' => 5,
+  'month_name' => 'May',
   'budget' => 100,
   'year' => '2018'
   })
 junbud = Budget.new({
-  'month' => 'June',
+  'month' => 6,
+  'month_name' => 'June',
   'budget' => 100,
   'year' => '2018'
   })
 julbud = Budget.new({
-  'month' => 'July',
+  'month' => 7,
+  'month_name' => 'July',
   'budget' => 100,
   'year' => '2018'
   })
 augbud = Budget.new({
-  'month' => 'August',
+  'month' => 8,
+  'month_name' => 'August',
   'budget' => 100,
   'year' => '2018'
   })
 sepbud = Budget.new({
-  'month' => 'September',
+  'month' => 9,
+  'month_name' => 'September',
   'budget' => 100,
   'year' => '2018'
   })
 octbud = Budget.new({
-  'month' => 'October',
+  'month' => 10,
+  'month_name' => 'October',
   'budget' => 100,
   'year' => '2018'
   })
 novbud = Budget.new({
-  'month' => 'November',
+  'month' => 11,
+  'month_name' => 'November',
   'budget' => 100,
   'year' => '2018'
   })
 decbud = Budget.new({
-  'month' => 'December',
+  'month' => 12,
+  'month_name' => 'December',
   'budget' => 100,
   'year' => '2018'
   })
 
 janbud2 = Budget.new({
-  'month' => 'January',
+  'month' => 1,
+  'month_name' => 'January',
   'budget' => 100,
   'year' => '2019'
   })
 febbud2 = Budget.new({
-  'month' => 'February',
+  'month' => 2,
+  'month_name' => 'February',
   'budget' => 100,
   'year' => '2019'
   })
 marbud2 = Budget.new({
-  'month' => 'March',
+  'month' => 3,
+  'month_name' => 'March',
   'budget' => 100,
   'year' => '2019'
   })
 aprbud2 = Budget.new({
-  'month' => 'April',
+  'month' => 4,
+  'month_name' => 'April',
   'budget' => 100,
   'year' => '2019'
   })
 maybud2 = Budget.new({
-  'month' => 'May',
+  'month' => 5,
+  'month_name' => 'May',
   'budget' => 100,
   'year' => '2019'
   })
 junbud2 = Budget.new({
-  'month' => 'June',
+  'month' => 6,
+  'month_name' => 'June',
   'budget' => 100,
   'year' => '2019'
   })
 julbud2 = Budget.new({
-  'month' => 'July',
+  'month' => 7,
+  'month_name' => 'July',
   'budget' => 100,
   'year' => '2019'
   })
 augbud2 = Budget.new({
-  'month' => 'August',
+  'month' => 8,
+  'month_name' => 'August',
   'budget' => 100,
   'year' => '2019'
   })
 sepbud2 = Budget.new({
-  'month' => 'September',
+  'month' => 9,
+  'month_name' => 'September',
   'budget' => 100,
   'year' => '2019'
   })
 octbud2 = Budget.new({
-  'month' => 'October',
+  'month' => 10,
+  'month_name' => 'October',
   'budget' => 100,
   'year' => '2019'
   })
 novbud2 = Budget.new({
-  'month' => 'November',
+  'month' => 11,
+  'month_name' => 'November',
   'budget' => 100,
   'year' => '2019'
   })
 decbud2 = Budget.new({
-  'month' => 'December',
+  'month' => 12,
+  'month_name' => 'December',
   'budget' => 100,
   'year' => '2019'
   })

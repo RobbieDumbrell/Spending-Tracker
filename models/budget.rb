@@ -3,21 +3,22 @@ require_relative('../db/sql_runner.rb')
 class Budget
 
   attr_writer :budget
-  attr_reader :id, :month, :budget, :year
+  attr_reader :id, :month, :month_name, :budget, :year
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @month = options['month']
+    @month = options['month'].to_i
+    @month_name = options['month_name']
     @budget = options['budget'].to_i
     @year = options['year']
   end
 
   # Create
   def save()
-    sql = "INSERT INTO budgets (month, budget, year)
-    VALUES ($1, $2, $3)
+    sql = "INSERT INTO budgets (month, month_name, budget, year)
+    VALUES ($1, $2, $3, $4)
     RETURNING id;"
-    values = [@month, @budget, @year]
+    values = [@month, @month_name, @budget, @year]
     result = SqlRunner.run(sql, values) # array of hash with id number.
     id_hash = result.first
     @id = id_hash['id'].to_i
@@ -29,6 +30,13 @@ class Budget
     values = [id]
     result = SqlRunner.run(sql, values) # array of hash with budget information.
     return Budget.new(result.first) # creates Budget object of found budget.
+  end
+
+  def self.find_year_month(year, month)
+    sql = "SELECT * FROM budgets WHERE (year, month) = ($1, $2)"
+    values = [year, month]
+    result = SqlRunner.run(sql, values)
+    return Budget.new(result.first)
   end
 
   def self.all()

@@ -34,7 +34,7 @@ class Transaction
   end
 
   def self.all()
-    sql = "SELECT * FROM transactions;"
+    sql = "SELECT * FROM transactions ORDER BY entry_date;"
     results = SqlRunner.run(sql) # array of transaction hashes.
     return results.map { |transaction_hash| Transaction.new(transaction_hash) } # array of Transaction objects.
   end
@@ -56,7 +56,7 @@ class Transaction
     all_transactions = Transaction.all()
     month_transactions = []
     for transaction in all_transactions
-      if transaction.entry_date.mon == my_month && transaction.entry_date.year == my_year
+      if transaction.entry_date.mon == my_month && transaction.entry_date.year == my_year.to_i
         month_transactions << transaction
       end
     end
@@ -111,8 +111,8 @@ class Transaction
     return year_amount_spent
   end
 
-  def self.total_month(my_month)
-    month_transactions = Transaction.month_all(my_month)
+  def self.total_month(my_month, my_year)
+    month_transactions = Transaction.month_all(my_month, my_year)
     month_amount_spent = 0
     for transaction in month_transactions
       amount = transaction.amount_spent.to_i
