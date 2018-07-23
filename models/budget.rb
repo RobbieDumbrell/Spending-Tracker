@@ -33,15 +33,22 @@ class Budget
   end
 
   def self.find_year_month(year, month)
-    sql = "SELECT * FROM budgets WHERE (year, month) = ($1, $2)"
+    sql = "SELECT * FROM budgets WHERE (year, month) = ($1, $2);"
     values = [year, month]
-    result = SqlRunner.run(sql, values)
+    result = SqlRunner.run(sql, values) # array of one budget hash
     return Budget.new(result.first)
   end
 
   def self.all()
     sql = "SELECT * FROM budgets ORDER BY id;"
     results = SqlRunner.run(sql) # array of budget hashes.
+    return results.map { |budget_hash| Budget.new(budget_hash) } # array of Budget objects.
+  end
+
+  def self.all_year(year)
+    sql = "SELECT * FROM budgets WHERE year = $1 ORDER BY id;"
+    values = [year]
+    results = SqlRunner.run(sql, values) # array of budget hashes.
     return results.map { |budget_hash| Budget.new(budget_hash) } # array of Budget objects.
   end
 

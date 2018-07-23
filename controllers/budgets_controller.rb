@@ -5,8 +5,14 @@ also_reload('../models/*')
 
 # Index Budgets
 get '/budgets/?' do
-  @all_budgets = Budget.all()
   erb(:"budgets/index")
+end
+
+# Budgets by Year
+get '/budgets/year/:year' do
+  @all_year_budgets = Budget.all_year(params['year'])
+  @total_year_budget = Budget.total_year(params['year'])
+  erb(:"budgets/index_by_year")
 end
 
 # Show Budget

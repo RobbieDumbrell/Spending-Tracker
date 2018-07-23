@@ -1,0 +1,18 @@
+<h1>Budgets By Year</h1>
+
+<ul>
+  <li><a href="/budgets/year/2018">2018</a></li>
+  <li><a href="/budgets/year/2019">2019</a></li>
+</ul>
+
+<% for budget in @all_year_budgets %>
+  <ul>
+    <li><%= budget.year %></li>
+    <li><%= budget.month_name %></li>
+    <li><%= budget.budget %></li>
+    <li><a href="/budgets/<%= budget.id %>">View</a></li>
+  </ul>
+<% end %>
+
+<h4>Total Year Budget:</h4>
+<p><%= @total_year_budget %></p>
