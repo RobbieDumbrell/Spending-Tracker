@@ -43,7 +43,7 @@ class Transaction
     return results.map { |transaction_hash| Transaction.new(transaction_hash) } # array of Transaction objects.
   end
 
-  # Method to bring back all transactions relating to a given month.
+  # Method to bring back all transactions relating to a given year.
   def self.year_all(my_year)
     all_transactions = Transaction.all()
     year_transactions = []
