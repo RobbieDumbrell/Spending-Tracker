@@ -1,5 +1,4 @@
 require_relative('../db/sql_runner.rb')
-require('date')
 
 class Transaction
 
@@ -11,13 +10,13 @@ class Transaction
     @merchant_id = options['merchant_id'].to_i
     @category_id = options['category_id'].to_i
     @amount_spent = options['amount_spent'].to_i
-    @entry_date = Date.parse(options['entry_date'])
+    @entry_date = Date.pa rse(options['entry_date'])
   end
 
   # Create
   def save()
     sql = "INSERT INTO transactions (merchant_id, category_id, amount_spent, entry_date)
-    VALUES ($1, $2, $3, $4)
+    VALUES ($1, $2  , $3, $4)
     RETURNING id;"
     values = [@merchant_id, @category_id, @amount_spent, @entry_date]
     result = SqlRunner.run(sql, values) # array of hash with id number.
