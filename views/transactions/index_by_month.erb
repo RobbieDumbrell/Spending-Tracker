@@ -51,14 +51,29 @@
 
 </table>
 
-<h4>Total Month Spend:</h4>
-<p><%= @month_total_spend %></p>
+<div class="total_spend">
 
-<h4>Monthly Budget:</h4>
-<p><%= @month_budget.budget %></p>
+  <h4>Total Month Spend:</h4>
+  <p><%= @month_total_spend %></p>
 
-<h4>Amount left to spend:</h4>
-<p><%= @difference %></p>
+</div>
 
+<div class="total_budget">
+
+  <h4>Monthly Budget:</h4>
+  <p><%= @month_budget.budget %></p>
+
+</div>
+
+<div class=<% if @difference > 0 %>
+  <%= "difference_good" %>
+  <% else %>
+  <%= "difference_bad" %>
+  <% end %>>
+
+  <h4>Amount left to spend:</h4>
+  <p><%= @difference %></p>
+
+</div>
 
 <p id="add_button"><a href="/transactions/new">Add Transaction</a></p>
