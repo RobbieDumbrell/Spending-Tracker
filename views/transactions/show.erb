@@ -7,13 +7,13 @@
   <li><%= @specified_transaction.entry_date %></li>
 </ul>
 
-<form class="" action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
+<form action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
 
   <input type="submit" value="EDIT TRANSACTION">
 
 </form>
 
-<form class="" action="/transactions/<%= @specified_transaction.id %>/delete/" method="post">
+<form class="delete_form" action="/transactions/<%= @specified_transaction.id %>/delete/" method="post">
 
   <input type="submit" value="DELETE TRANSACTION">
 
