@@ -32,7 +32,7 @@ class Category
   end
 
   def self.all()
-    sql = "SELECT * FROM categories;"
+    sql = "SELECT * FROM categories ORDER BY type;"
     results = SqlRunner.run(sql) # array of category hashes.
     return results.map { |category_hash| Category.new(category_hash) } # array of Category objects.
   end

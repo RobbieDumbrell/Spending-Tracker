@@ -23,6 +23,10 @@ input[type=submit] {
   cursor: pointer;
 }
 
+#add_button {
+  padding: 20px;
+}
+
 input[type=submit]:hover {
   background-color: white;
   color: green;

@@ -11,14 +11,16 @@ a {
   text-decoration: none;
 }
 
-
-
 .explainer {
   margin-bottom: 30px;
   padding: 5px;
   background-color: white;
   font-style: italic;
   color: black;
+}
+
+.no_transactions {
+  padding: 20px;
 }
 
 /* NAV BAR ON EVERY PAGE */
@@ -55,7 +57,7 @@ h1 {
   padding: 10px;
 }
 
-
+/* MERCHANT AND CATEGORY INDEX */
 
 .mer_cat_ul li {
   display: inline-block;
@@ -68,6 +70,7 @@ h1 {
   background-color: #091540;
   margin: 10px;
   color: white;
+  min-width: 200px;
 }
 
 .mer_cat_ul li a:hover {
@@ -75,9 +78,7 @@ h1 {
   color: #091540;
 }
 
-
-
-
+/* ADD A THING BUTTONS */
 
 #add_button a {
   background-color: green;
@@ -91,4 +92,72 @@ h1 {
 #add_button a:hover {
   background-color: white;
   color: green;
+}
+
+.year_select ul {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.year_select ul li {
+  display: inline-block;
+}
+
+.year_select ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 15px 30px;
+  text-decoration: none;
+  background-color: #ABD2FA;
+  font-weight: bold;
+}
+
+.year_select ul li a:hover {
+  background-color: black;
+  color: #ABD2FA;
+}
+
+.month_select ul {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.month_select ul li {
+  display: inline-block;
+}
+
+.month_select ul li a {
+  display: block;
+  color: #ABD2FA;
+  text-align: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: black;
+}
+
+.month_select ul li a:hover {
+  background-color: #ABD2FA;
+  color: black;
+}
+
+.total_spend {
+  padding: 10px;
+  background-color: black;
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid white;
+}
+
+.total_spend h4 {
+  background-color: black;
+  text-decoration: underline;
+  color: white;
+  padding: 5px;
+}
+
+.total_spend p {
+  background-color: black;
+  color: white;
+  padding: 5px;
 }

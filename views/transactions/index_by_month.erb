@@ -1,26 +1,34 @@
 <h1><%= @year %></h1>
 <h1><%= @month_budget.month_name %> Transactions</h1>
 
-<ul>
-  <% for year in @all_years %>
-    <li><a href="/transactions/year/<%=year%>"><%= year %></a></li>
-  <% end %>
-</ul>
+<div class="year_select">
 
-<ul>
-  <li><a href="/transactions/year/<%= @year %>/month/1">Jan</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/2">Feb</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/3">Mar</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/4">Apr</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/5">May</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/6">Jun</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/7">Jul</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/8">Aug</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/9">Sep</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/10">Oct</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/11">Nov</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/12">Dec</a></li>
-</ul>
+  <ul>
+    <% for year in @all_years %>
+    <li><a href="/transactions/year/<%=year%>"><%= year %></a></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<div class="month_select">
+
+  <ul>
+    <li><a href="/transactions/year/<%= @year %>/month/1">Jan</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/2">Feb</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/3">Mar</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/4">Apr</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/5">May</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/6">Jun</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/7">Jul</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/8">Aug</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/9">Sep</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/10">Oct</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/11">Nov</a></li>
+    <li><a href="/transactions/year/<%= @year %>/month/12">Dec</a></li>
+  </ul>
+
+</div>
 
 <table>
   <tr>
@@ -28,12 +36,13 @@
     <th>Category</th>
     <th>Amount</th>
     <th>Date</th>
+    <th>More</th>
   </tr>
 
   <% for transaction in @month_transactions %>
   <tr>
-    <td><%= Merchant.find(transaction.merchant_id).name %></td>
-    <td><%= Category.find(transaction.category_id).type %></td>
+    <td><a href="/merchants/<%= Merchant.find(transaction.merchant_id).id %>"><%= Merchant.find(transaction.merchant_id).name %></a></td>
+    <td><a href="/categories/<%= Category.find(transaction.category_id).id %>"><%= Category.find(transaction.category_id).type %></a></td>
     <td><%= transaction.amount_spent %></td>
     <td><%= transaction.entry_date%></td>
     <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
@@ -52,4 +61,4 @@
 <p><%= @difference %></p>
 
 
-<a id="add_button" href="/transactions/new">Add Transaction</a>
+<p id="add_button"><a href="/transactions/new">Add Transaction</a></p>

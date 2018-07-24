@@ -1,36 +1,45 @@
-<h1>Transactions</h1>
+<h1>All Transactions</h1>
 
-<ul>
-  <% for year in @all_years %>
+<div class="year_select">
+
+  <ul>
+    <% for year in @all_years %>
     <li><a href="/transactions/year/<%=year%>"><%= year %></a></li>
-  <% end %>
-</ul>
-
-<div class="table_scroll">
-
-<table>
-  <tr>
-    <th>Merchant</th>
-    <th>Category</th>
-    <th>Amount</th>
-    <th>Date</th>
-  </tr>
-
-  <% for transaction in @all_transactions %>
-  <tr>
-    <td><%= Merchant.find(transaction.merchant_id).name %></td>
-    <td><%= Category.find(transaction.category_id).type %></td>
-    <td><%= transaction.amount_spent %></td>
-    <td><%= transaction.entry_date%></td>
-    <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
-  </tr>
-  <% end %>
-
-</table>
+    <% end %>
+  </ul>
 
 </div>
 
-<h4>Total Spend:</h4>
-<p><%= @all_total_spend %></p>
+<div class="table_scroll">
 
-<a id="add_button" href="/transactions/new">Add Transaction</a>
+  <table>
+    <tr>
+      <th>Merchant</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>More</th>
+    </tr>
+
+    <% for transaction in @all_transactions %>
+    <tr>
+      <td><a href="/merchants/<%= Merchant.find(transaction.merchant_id).id %>"><%= Merchant.find(transaction.merchant_id).name %></a></td>
+      <td><a href="/categories/<%= Category.find(transaction.category_id).id %>"><%= Category.find(transaction.category_id).type %></a></td>
+      <td><%= transaction.amount_spent %></td>
+      <td><%= transaction.entry_date%></td>
+      <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+    </tr>
+    <% end %>
+
+  </table>
+
+</div>
+
+<div class="total_spend">
+
+  <h4>Total Spend:</h4>
+  <p><%= @all_total_spend %></p>
+
+</div>
+
+<p id="add_button"><a href="/transactions/new">Add Transaction</a></p>

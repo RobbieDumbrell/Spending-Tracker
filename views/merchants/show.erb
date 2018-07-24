@@ -2,7 +2,7 @@
 
 <% if @merchant_transactions.count == 0 %>
 
-  <p class="no_transactions">There are currently no transactions relating to <%= @specified_merchant.name %></p>
+  <p class="no_transactions">There are currently no transactions relating to <%= @specified_merchant.name %>.</p>
 
 <% else %>
 
@@ -13,12 +13,13 @@
     <th>Category</th>
     <th>Amount</th>
     <th>Date</th>
+    <th>More</th>
   </tr>
 
   <% for transaction in @merchant_transactions %>
   <% category = Category.find(transaction.category_id) %>
   <tr>
-    <td><%= category.type %></td>
+    <td><a href="/categories/<%= category.id %>"><%= category.type %></a></td>
     <td><%= transaction.amount_spent %></td>
     <td><%= transaction.entry_date%></td>
     <td><a href="/transactions/<%= transaction.id %>">Options</a></td>

@@ -1,6 +1,6 @@
 .table_scroll {
   overflow-y: auto;
-  height: 500px;
+  max-height: 500px;
 }
 
 table {
@@ -32,4 +32,16 @@ td {
 
 th, td {
   padding: 3px;
+}
+
+td a {
+  display: block;
+  color: black;
+  background-color: white;
+  padding: 5px;
+}
+
+td a:hover {
+  background: black;
+  color: white;
 }
