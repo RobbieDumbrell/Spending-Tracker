@@ -1,0 +1,62 @@
+form {
+  margin: 10px;
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ABD2FA;
+  color: black;
+  font-size: 18px;
+}
+
+input[type=submit] {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border: solid 2px black;
+  margin: 2px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+
+label {
+  font-size: 20px;
+}
+
+.delete_form input[type=submit] {
+  background-color: red;
+}
+
+.delete_form input[type=submit]:hover {
+  background-color: white;
+  color: red;
+}
+
+.delete_message {
+  background-color: white;
+  margin: 50px;
+  border: solid 2px black;
+}
+
+.delete_message p {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.current_thing {
+  padding: 20px;
+  font-size: 20px;
+}

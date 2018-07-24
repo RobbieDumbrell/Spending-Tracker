@@ -1,5 +1,7 @@
 <h1>Merchant Name: <%= @specified_merchant.name %></h1>
 
+<div class="table_scroll">
+
 <table>
   <tr>
     <th>Category</th>
@@ -19,13 +21,15 @@
 
 </table>
 
-<form action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
+</div>
+
+<form class="edit_form" action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
 
   <input type="submit" value="EDIT MERCHANT">
 
 </form>
 
-<form action="/merchants/<%= @specified_merchant.id %>/delete/confirm/" method="get">
+<form class="delete_form" action="/merchants/<%= @specified_merchant.id %>/delete/confirm/" method="get">
 
   <input type="submit" value="DELETE MERCHANT">
 

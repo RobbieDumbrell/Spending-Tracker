@@ -1,8 +1,13 @@
-<h2>Are you sure you want to delete the <%= @deleting_merchant.name %> merchant?</h2>
+<div class="delete_message">
 
-<h2>All transactions linked to this merchant will also be deleted.</h2>
+  <p>Are you sure you want to delete <%= @deleting_merchant.name %> from Merchants?</p>
 
-<form class="" action="/merchants/<%= @deleting_merchant.id %>/delete/" method="post">
+  <p>All transactions linked to this <%= @deleting_merchant.name %> will also be deleted.</p>
+
+</div>
+
+
+<form class="delete_form" action="/merchants/<%= @deleting_merchant.id %>/delete/" method="post">
 
   <input type="submit" value="CONFIRM DELETE">
 

@@ -69,7 +69,8 @@ class Merchant
     sql = "SELECT transactions.* FROM transactions
     INNER JOIN merchants
     ON transactions.merchant_id = merchants.id
-    WHERE transactions.merchant_id = $1;"
+    WHERE transactions.merchant_id = $1
+    ORDER BY entry_date;"
     values = [@id]
     results = SqlRunner.run(sql, values) # array of transaction hashes.
     return results.map { |transaction_hash| Transaction.new(transaction_hash) }

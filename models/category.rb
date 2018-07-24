@@ -69,7 +69,8 @@ class Category
     sql = "SELECT transactions.* FROM transactions
     INNER JOIN categories
     ON transactions.category_id = categories.id
-    WHERE transactions.category_id = $1;"
+    WHERE transactions.category_id = $1
+    ORDER BY entry_date;"
     values = [@id]
     results = SqlRunner.run(sql, values) # array of transaction hashes.
     return results.map { |transaction_hash| Transaction.new(transaction_hash) }
