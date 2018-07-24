@@ -1,12 +1,13 @@
 <h1>Edit Category</h1>
 
-<h4>Current Category Type: <%= @specified_category.type %></h4>
+<p class="current_thing">Current Category Type: <%= @specified_category.type %></p>
 
 <form class="" action="/categories/<%= @specified_category.id %>" method="post">
 
   <label for="category_type">New Category Type:</label>
+  <br>
   <input id="category_type" type="text" name="type">
-
+  <br>
   <input type="submit" value="UPDATE CATEGORY">
 
 </form>

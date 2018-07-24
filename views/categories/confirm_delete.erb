@@ -1,6 +1,10 @@
-<h2>Are you sure you want to delete the <%= @deleting_category.type %> category?</h2>
+<div class="delete_message">
 
-<h2>All transactions linked to this category will also be deleted.</h2>
+  <p>Are you sure you want to delete <%= @deleting_category.type %> from Categories?</p>
+
+  <p>All transactions linked to <%= @deleting_category.type %> will also be deleted.</p>
+
+</div>
 
 <form class="delete_form" action="/categories/<%= @deleting_category.id %>/delete/" method="post">
 

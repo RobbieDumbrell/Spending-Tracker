@@ -1,10 +1,11 @@
 <h1>Categories</h1>
 
+<p class="explainer">Choose a Category to expand:</p>
+
 <% for category in @all_categories %>
-  <ul>
-    <li><%= category.type %></li>
-    <li><a href="/categories/<%= category.id %>">View</a></li>
+  <ul class="mer_cat_ul">
+    <li><a href="/categories/<%= category.id %>"><%= category.type %></a></li>
   </ul>
 <% end %>
 
-<a id="add_button" href="/categories/new">Add Category</a>
+<p id="add_button"><a href="/categories/new">Add Category</a></p>

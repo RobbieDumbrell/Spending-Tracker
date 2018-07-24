@@ -1,5 +1,11 @@
 <h1>Merchant Name: <%= @specified_merchant.name %></h1>
 
+<% if @merchant_transactions.count == 0 %>
+
+  <p class="no_transactions">There are currently no transactions relating to <%= @specified_merchant.name %></p>
+
+<% else %>
+
 <div class="table_scroll">
 
 <table>
@@ -22,6 +28,8 @@
 </table>
 
 </div>
+
+<% end %>
 
 <form class="edit_form" action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
 

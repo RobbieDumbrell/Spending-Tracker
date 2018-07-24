@@ -1,24 +1,35 @@
 <h1>Category Type: <%= @specified_category.type %></h1>
 
-<table>
-  <tr>
-    <th>Merchant</th>
-    <th>Amount</th>
-    <th>Date</th>
-  </tr>
+<% if @category_transactions.count == 0 %>
 
-  <% for transaction in @category_transactions %>
-  <% merchant = Merchant.find(transaction.merchant_id) %>
-  <tr>
-    <td><%= merchant.name %></td>
-    <td><%= transaction.amount_spent %></td>
-    <td><%= transaction.entry_date%></td>
-    <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
-  </tr>
-  <% end %>
+<p class="no_transactions">There are currently no transactions relating to <%= @specified_category.type %></p>
 
-</table>
+<% else %>
 
+<div class="table_scroll">
+
+  <table>
+    <tr>
+      <th>Merchant</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+
+    <% for transaction in @category_transactions %>
+    <% merchant = Merchant.find(transaction.merchant_id) %>
+    <tr>
+      <td><%= merchant.name %></td>
+      <td><%= transaction.amount_spent %></td>
+      <td><%= transaction.entry_date%></td>
+      <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+    </tr>
+    <% end %>
+
+  </table>
+
+</div>
+
+<% end %>
 
 <form class="" action="/categories/<%= @specified_category.id %>/edit/" method="get">
 
@@ -26,7 +37,7 @@
 
 </form>
 
-<form class="" action="/categories/<%= @specified_category.id %>/delete/confirm/" method="get">
+<form class="delete_form" action="/categories/<%= @specified_category.id %>/delete/confirm/" method="get">
 
   <input type="submit" value="DELETE CATEGORY">
 
