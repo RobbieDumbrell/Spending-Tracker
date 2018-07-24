@@ -10,7 +10,7 @@ class Transaction
     @merchant_id = options['merchant_id'].to_i
     @category_id = options['category_id'].to_i
     @amount_spent = options['amount_spent'].to_i
-    @entry_date = Date.pa rse(options['entry_date'])
+    @entry_date = Date.parse(options['entry_date'])
   end
 
   # Create

@@ -19,6 +19,7 @@ get '/transactions/year/:year/?' do
   @year_transactions = Transaction.year_all(params['year'].to_i)
   @year_total_spend = Transaction.total_year(params['year'].to_i)
   @year_budget = Budget.total_year(params['year'])
+  @difference = (@year_budget.to_i) - (@year_total_spend.to_i)
   erb(:"transactions/index_by_year")
 end
 
@@ -28,6 +29,7 @@ get '/transactions/year/:year/month/:month/?' do
   @month_transactions = Transaction.month_all(params['month'].to_i, params['year'])
   @month_total_spend = Transaction.total_month(params['month'].to_i, params['year'])
   @month_budget = Budget.find_year_month(params['year'], params['month'].to_i)
+  @difference = (@month_budget.budget.to_i) - (@month_total_spend.to_i)
   erb(:"transactions/index_by_month")
 end
 

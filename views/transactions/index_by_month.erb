@@ -6,6 +6,21 @@
   <li><a href="/transactions/year/2019">2019</a></li>
 </ul>
 
+<ul>
+  <li><a href="/transactions/year/<%= @year %>/month/1">Jan</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/2">Feb</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/3">Mar</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/4">Apr</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/5">May</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/6">Jun</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/7">Jul</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/8">Aug</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/9">Sep</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/10">Oct</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/11">Nov</a></li>
+  <li><a href="/transactions/year/<%= @year %>/month/12">Dec</a></li>
+</ul>
+
 <table>
   <tr>
     <th>Merchant</th>
@@ -32,19 +47,8 @@
 <h4>Monthly Budget:</h4>
 <p><%= @month_budget.budget %></p>
 
-<ul>
-  <li><a href="/transactions/year/<%= @year %>/month/1">Jan</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/2">Feb</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/3">Mar</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/4">Apr</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/5">May</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/6">Jun</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/7">Jul</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/8">Aug</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/9">Sep</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/10">Oct</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/11">Nov</a></li>
-  <li><a href="/transactions/year/<%= @year %>/month/12">Dec</a></li>
-</ul>
+<h4>Amount left to spend:</h4>
+<p><%= @difference %></p>
+
 
 <p><a href="/transactions/new">Add Transaction</a></p>

@@ -12,6 +12,7 @@ end
 get '/budgets/year/:year' do
   @all_year_budgets = Budget.all_year(params['year'])
   @total_year_budget = Budget.total_year(params['year'])
+  @year = params['year']
   erb(:"budgets/index_by_year")
 end
 
