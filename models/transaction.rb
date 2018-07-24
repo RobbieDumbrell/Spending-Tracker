@@ -32,6 +32,11 @@ class Transaction
     return Transaction.new(result.first) # creates Transaction object of found transactions.
   end
 
+  #
+  def self.unique_years(all_transactions)
+    return all_transactions.map { |t| t.entry_date.year }.uniq
+  end
+
   def self.all()
     sql = "SELECT * FROM transactions ORDER BY entry_date;"
     results = SqlRunner.run(sql) # array of transaction hashes.

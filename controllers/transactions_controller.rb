@@ -10,12 +10,15 @@ also_reload('../models/*')
 get '/transactions/?' do
   @all_transactions = Transaction.all()
   @all_total_spend = Transaction.total_all()
+  @all_years = Transaction.unique_years(@all_transactions)
   erb(:"transactions/index")
 end
 
 # Transactions by Year
 get '/transactions/year/:year/?' do
   @year = params['year'].to_i
+  @all_transactions = Transaction.all()
+  @all_years = Transaction.unique_years(@all_transactions)
   @year_transactions = Transaction.year_all(params['year'].to_i)
   @year_total_spend = Transaction.total_year(params['year'].to_i)
   @year_budget = Budget.total_year(params['year'])
@@ -26,6 +29,8 @@ end
 # Transactions by Month
 get '/transactions/year/:year/month/:month/?' do
   @year = params['year'].to_i
+  @all_transactions = Transaction.all()
+  @all_years = Transaction.unique_years(@all_transactions)
   @month_transactions = Transaction.month_all(params['month'].to_i, params['year'])
   @month_total_spend = Transaction.total_month(params['month'].to_i, params['year'])
   @month_budget = Budget.find_year_month(params['year'], params['month'].to_i)

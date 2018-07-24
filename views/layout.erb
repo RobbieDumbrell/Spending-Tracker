@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Spending Tracker</title>
-  </head>
-  <body>
-    <%= yield %>
+<head>
+  <meta charset="utf-8">
+  <title>Spending Tracker</title>
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+</head>
+<body>
+  <header>
     <nav>
       <ul>
+        <li><a href="/">Home</a></li>
         <li><a href="/transactions">Transactions</a></li>
         <li><a href="/merchants">Merchants</a></li>
         <li><a href="/categories">Categories</a></li>
         <li><a href="/budgets">Budgets</a></li>
-        <li><a href="/">Home</a></li>
       </ul>
     </nav>
-  </body>
+  </header>
+  <%= yield %>
+</body>
 </html>

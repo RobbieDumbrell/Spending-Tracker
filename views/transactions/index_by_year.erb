@@ -1,8 +1,9 @@
 <h1><%= @year %> Transactions</h1>
 
 <ul>
-  <li><a href="/transactions/year/2018">2018</a></li>
-  <li><a href="/transactions/year/2019">2019</a></li>
+  <% for year in @all_years %>
+    <li><a href="/transactions/year/<%=year%>"><%= year %></a></li>
+  <% end %>
 </ul>
 
 <ul>
