@@ -7,10 +7,9 @@
 
 <% for budget in @all_year_budgets %>
   <ul>
-    <li><%= budget.year %></li>
     <li><%= budget.month_name %></li>
     <li><%= budget.budget %></li>
-    <li><a href="/budgets/<%= budget.id %>">View</a></li>
+    <li><a href="/budgets/<%= budget.id %>/edit">Edit</a></li>
   </ul>
 <% end %>
 

@@ -1,12 +1,24 @@
 <h1>Category Type: <%= @specified_category.type %></h1>
 
-<% for transaction in @category_transactions %>
+<table>
+  <tr>
+    <th>Merchant</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+
+  <% for transaction in @category_transactions %>
   <% merchant = Merchant.find(transaction.merchant_id) %>
-  <ul>
-    <li><%= merchant.name %></li>
-    <li><%= transaction.amount_spent %></li>
-  </ul>
-<% end %>
+  <tr>
+    <td><%= merchant.name %></td>
+    <td><%= transaction.amount_spent %></td>
+    <td><%= transaction.entry_date%></td>
+    <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+  </tr>
+  <% end %>
+
+</table>
+
 
 <form class="" action="/categories/<%= @specified_category.id %>/edit/" method="get">
 
