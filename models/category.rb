@@ -37,6 +37,13 @@ class Category
     return results.map { |category_hash| Category.new(category_hash) } # array of Category objects.
   end
 
+  def self.search(search_entry)
+    sql = "SELECT * FROM categories WHERE type ILIKE $1;"
+    values = [search_entry]
+    results = SqlRunner.run(sql, values)
+    return results.map { |category_hash| Category.new(category_hash) } # array of category objects
+  end
+
   # Update
   def update()
     sql = "UPDATE categories

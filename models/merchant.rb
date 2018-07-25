@@ -37,6 +37,13 @@ class Merchant
     return results.map { |merchant_hash| Merchant.new(merchant_hash) } # array of Merchant objects.
   end
 
+  def self.search(search_entry)
+    sql = "SELECT * FROM merchants WHERE name ILIKE $1;"
+    values = [search_entry]
+    results = SqlRunner.run(sql, values)
+    return results.map { |merchant_hash| Merchant.new(merchant_hash) } # array of merchant objects
+  end
+
   # Update
   def update()
     sql = "UPDATE merchants

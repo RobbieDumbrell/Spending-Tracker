@@ -2,10 +2,26 @@
 
 <p class="explainer">Choose a Category to expand:</p>
 
-<% for category in @all_categories %>
+<form action="/categories" method="get">
+  <input type="search" name="search" placeholder="Search Category...">
+</form>
+
+<% if @searched_categories.count > 0 %>
+
+  <% for category in @searched_categories %>
   <ul class="mer_cat_ul">
     <li><a href="/categories/<%= category.id %>"><%= category.type %></a></li>
   </ul>
-<% end %>
+  <% end %>
 
-<p id="add_button"><a href="/categories/new">Add Category</a></p>
+  <% else %>
+
+  <% for category in @all_categories %>
+  <ul class="mer_cat_ul">
+    <li><a href="/categories/<%= category.id %>"><%= category.type %></a></li>
+  </ul>
+  <% end %>
+
+  <% end %>
+
+  <p id="add_button"><a href="/categories/new">ADD CATEGORY</a></p>

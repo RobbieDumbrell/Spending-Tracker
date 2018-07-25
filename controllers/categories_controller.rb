@@ -6,6 +6,8 @@ also_reload('../models/*')
 # Index Categories
 get '/categories/?' do
   @all_categories = Category.all()
+  search_entry = params['search']
+  @searched_categories = Category.search(search_entry)
   erb(:"categories/index")
 end
 

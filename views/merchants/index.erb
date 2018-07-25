@@ -2,10 +2,26 @@
 
 <p class="explainer">Choose a Merchant to expand:</p>
 
+<form action="/merchants" method="get">
+  <input type="search" name="search" placeholder="Search Merchants...">
+</form>
+
+<% if @searched_merchants.count > 0 %>
+
+<% for merchant in @searched_merchants %>
+<ul class="mer_cat_ul">
+  <li><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
+</ul>
+<% end %>
+
+<% else %>
+
 <% for merchant in @all_merchants %>
-  <ul class="mer_cat_ul">
-    <li><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
-  </ul>
+<ul class="mer_cat_ul">
+  <li><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
+</ul>
+<% end %>
+
 <% end %>
 
 <p id="add_button"><a href="/merchants/new">ADD MERCHANT</a></p>

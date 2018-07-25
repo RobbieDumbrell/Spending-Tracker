@@ -6,6 +6,8 @@ also_reload('../models/*')
 # Index Merchants
 get '/merchants/?' do
   @all_merchants = Merchant.all()
+  search_entry = params['search']
+  @searched_merchants = Merchant.search(search_entry)
   erb(:"merchants/index")
 end
 
