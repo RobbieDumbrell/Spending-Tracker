@@ -6,7 +6,8 @@
 
   <br>
 
-  <select id="merchant-select" name="merchant_id">
+  <select id="merchant-select" name="merchant_id" required>
+    <option disabled selected value> -- select -- </option>
     <% for merchant in @all_merchants %>
     <option value="<%= merchant.id %>"><%= merchant.name %></option>
     <% end %>
@@ -18,7 +19,8 @@
 
   <br>
 
-  <select id="category-select" name="category_id">
+  <select id="category-select" name="category_id" required>
+    <option disabled selected value> -- select -- </option>
     <% for category in @all_categories %>
     <option value="<%= category.id %>"><%= category.type %></option>
     <% end %>
@@ -30,7 +32,7 @@
 
   <br>
 
-  <input type="number" name="amount_spent">
+  <input type="number" name="amount_spent" required>
 
   <br>
 
