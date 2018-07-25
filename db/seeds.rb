@@ -170,6 +170,79 @@ decbud2 = Budget.new({
   'year' => '2019'
   })
 
+janbud3 = Budget.new({
+  'month' => 1,
+  'month_name' => 'January',
+  'budget' => 100,
+  'year' => '2020'
+  })
+febbud3 = Budget.new({
+  'month' => 2,
+  'month_name' => 'February',
+  'budget' => 100,
+  'year' => '2020'
+  })
+marbud3 = Budget.new({
+  'month' => 3,
+  'month_name' => 'March',
+  'budget' => 100,
+  'year' => '2020'
+  })
+aprbud3 = Budget.new({
+  'month' => 4,
+  'month_name' => 'April',
+  'budget' => 100,
+  'year' => '2020'
+  })
+maybud3 = Budget.new({
+  'month' => 5,
+  'month_name' => 'May',
+  'budget' => 100,
+  'year' => '2020'
+  })
+junbud3 = Budget.new({
+  'month' => 6,
+  'month_name' => 'June',
+  'budget' => 100,
+  'year' => '2020'
+  })
+julbud3 = Budget.new({
+  'month' => 7,
+  'month_name' => 'July',
+  'budget' => 100,
+  'year' => '2020'
+  })
+augbud3 = Budget.new({
+  'month' => 8,
+  'month_name' => 'August',
+  'budget' => 100,
+  'year' => '2020'
+  })
+sepbud3 = Budget.new({
+  'month' => 9,
+  'month_name' => 'September',
+  'budget' => 100,
+  'year' => '2020'
+  })
+octbud3 = Budget.new({
+  'month' => 10,
+  'month_name' => 'October',
+  'budget' => 100,
+  'year' => '2020'
+  })
+novbud3 = Budget.new({
+  'month' => 11,
+  'month_name' => 'November',
+  'budget' => 100,
+  'year' => '2020'
+  })
+decbud3 = Budget.new({
+  'month' => 12,
+  'month_name' => 'December',
+  'budget' => 100,
+  'year' => '2020'
+  })
+
 janbud.save()
 febbud.save()
 marbud.save()
@@ -194,6 +267,18 @@ sepbud2.save()
 octbud2.save()
 novbud2.save()
 decbud2.save()
+janbud3.save()
+febbud3.save()
+marbud3.save()
+aprbud3.save()
+maybud3.save()
+junbud3.save()
+julbud3.save()
+augbud3.save()
+sepbud3.save()
+octbud3.save()
+novbud3.save()
+decbud3.save()
 
 # found_merchant = Merchant.find(2)
 # found_category = Category.find(2)

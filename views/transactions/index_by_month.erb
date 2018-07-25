@@ -30,6 +30,10 @@
 
 </div>
 
+<% if @month_transactions.count == 0 %>
+<p class="no_transactions">There are currently no transactions relating to <%= @month_budget.month_name %>.</p>
+<% else  %>
+
 <table>
   <tr>
     <th>Merchant</th>
@@ -50,6 +54,8 @@
   <% end %>
 
 </table>
+
+<% end %>
 
 <div class="total_spend">
 
