@@ -9,7 +9,7 @@ class Transaction
     @id = options['id'].to_i if options['id']
     @merchant_id = options['merchant_id'].to_i
     @category_id = options['category_id'].to_i
-    @amount_spent = options['amount_spent'].to_i
+    @amount_spent = options['amount_spent'].to_f
     @entry_date = Date.parse(options['entry_date'])
   end
 
@@ -99,30 +99,30 @@ class Transaction
     all_transactions = Transaction.all()
     total_amount_spent = 0
     for transaction in all_transactions
-      amount = transaction.amount_spent.to_i
+      amount = transaction.amount_spent.to_f
       total_amount_spent += amount
     end
-    return total_amount_spent
+    return total_amount_spent.round(2)
   end
 
   def self.total_year(my_year)
     year_transactions = Transaction.year_all(my_year)
     year_amount_spent = 0
     for transaction in year_transactions
-      amount = transaction.amount_spent.to_i
+      amount = transaction.amount_spent.to_f
       year_amount_spent += amount
     end
-    return year_amount_spent
+    return year_amount_spent.round(2)
   end
 
   def self.total_month(my_month, my_year)
     month_transactions = Transaction.month_all(my_month, my_year)
     month_amount_spent = 0
     for transaction in month_transactions
-      amount = transaction.amount_spent.to_i
+      amount = transaction.amount_spent.to_f
       month_amount_spent += amount
     end
-    return month_amount_spent
+    return month_amount_spent.round(2)
   end
 
 end

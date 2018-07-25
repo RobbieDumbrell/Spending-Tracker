@@ -5,6 +5,7 @@ require_relative('../models/merchant')
 require_relative('../models/category')
 require_relative('../models/budget')
 require_relative('../models/formatter')
+require('date')
 also_reload('../models/*')
 
 # Index Transactions
@@ -23,19 +24,21 @@ get '/transactions/year/:year/?' do
   @year_transactions = Transaction.year_all(params['year'].to_i)
   @year_total_spend = Transaction.total_year(params['year'].to_i)
   @year_budget = Budget.total_year(params['year'])
-  @difference = (@year_budget.to_i) - (@year_total_spend.to_i)
+  @difference = (@year_budget) - (@year_total_spend)
   erb(:"transactions/index_by_year")
 end
 
 # Transactions by Month
 get '/transactions/year/:year/month/:month/?' do
+  months = Date::MONTHNAMES
+  @month = months[params['month'].to_i]
   @year = params['year'].to_i
   @all_transactions = Transaction.all()
   @all_years = Transaction.unique_years(@all_transactions)
   @month_transactions = Transaction.month_all(params['month'].to_i, params['year'])
   @month_total_spend = Transaction.total_month(params['month'].to_i, params['year'])
-  @month_budget = Budget.find_year_month(params['year'], params['month'].to_i)
-  @difference = (@month_budget.budget.to_i) - (@month_total_spend.to_i)
+  @month_budget = Budget.total_month(params['year'], @month.to_s)
+  @difference = (@month_budget) - (@month_total_spend)
   erb(:"transactions/index_by_month")
 end
 

@@ -9,7 +9,7 @@ class Budget
     @id = options['id'].to_i if options['id']
     @month = options['month'].to_i
     @month_name = options['month_name']
-    @budget = options['budget'].to_i
+    @budget = options['budget'].to_f
     @year = options['year']
   end
 
@@ -69,10 +69,21 @@ class Budget
     budget_year_total = 0
     for entry in all_budgets
       if entry.year == my_year.to_s
-        budget_year_total += entry.budget.to_i
+        budget_year_total += entry.budget.to_f
       end
     end
-    return budget_year_total
+    return budget_year_total.round(2)
+  end
+
+  def self.total_month(my_year, my_month)
+    all_budgets = Budget.all()
+    budget_month_total = 0
+    for entry in all_budgets
+      if entry.year == my_year.to_s && entry.month_name == my_month.to_s
+        budget_month_total += entry.budget.to_f
+      end
+    end
+    return budget_month_total.round(2)
   end
 
 end

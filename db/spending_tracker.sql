@@ -17,7 +17,7 @@ CREATE TABLE transactions (
   id SERIAL8 PRIMARY KEY,
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
   category_id INT8 REFERENCES categories(id) ON DELETE CASCADE,
-  amount_spent INT8,
+  amount_spent NUMERIC,
   entry_date DATE
 );
 
@@ -25,6 +25,6 @@ CREATE TABLE budgets (
   id SERIAL8 PRIMARY KEY,
   month INT8,
   month_name VARCHAR(255),
-  budget INT8,
+  budget NUMERIC,
   year VARCHAR(255)
 )

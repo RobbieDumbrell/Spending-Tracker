@@ -1,5 +1,5 @@
 <h1><%= @year %></h1>
-<h1><%= @month_budget.month_name %> Transactions</h1>
+<h1><%= @month %> Transactions</h1>
 
 <div class="year_select">
 
@@ -31,7 +31,7 @@
 </div>
 
 <% if @month_transactions.count == 0 %>
-<p class="no_transactions">There are currently no transactions relating to <%= @month_budget.month_name %>.</p>
+<p class="no_transactions">There are currently no transactions relating to <%= @month %>.</p>
 <% else  %>
 
 <table>
@@ -68,7 +68,7 @@
 <div class="total_budget">
 
   <h4>Monthly Budget:</h4>
-  <p><%= Formatter.pound_format(@month_budget.budget) %></p>
+  <p><%= Formatter.pound_format(@month_budget) %></p>
 
 </div>
 
