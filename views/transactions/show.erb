@@ -1,11 +1,15 @@
 <h1>Transaction ID: <%= @specified_transaction.id %></h1>
 
-<ul>
-  <li><%= @merchant.name %></li>
-  <li><%= @category.type %></li>
-  <li><%= @specified_transaction.amount_spent %></li>
-  <li><%= @specified_transaction.entry_date %></li>
-</ul>
+<div class="transaction">
+
+  <ul>
+    <li>Merchant: <%= @merchant.name %></li>
+    <li>Category: <%= @category.type %></li>
+    <li>Amount: <%= @specified_transaction.amount_spent %></li>
+    <li>Date: <%= @specified_transaction.entry_date %></li>
+  </ul>
+
+</div>
 
 <form action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
 

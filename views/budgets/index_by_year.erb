@@ -1,17 +1,39 @@
 <h1><%= @year %> Budgets</h1>
 
-<ul>
-  <li><a href="/budgets/year/2018">2018</a></li>
-  <li><a href="/budgets/year/2019">2019</a></li>
-</ul>
+<p class="explainer">Choose a Month to Edit a Budget:</p>
 
-<% for budget in @all_year_budgets %>
+<div class="year_select">
+
   <ul>
-    <li><%= budget.month_name %></li>
-    <li><%= budget.budget %></li>
-    <li><a href="/budgets/<%= budget.id %>/edit">Edit</a></li>
+    <li><a href="/budgets/year/2018">2018</a></li>
+    <li><a href="/budgets/year/2019">2019</a></li>
   </ul>
-<% end %>
 
-<h4>Total Year Budget:</h4>
-<p><%= @total_year_budget %></p>
+</div>
+
+<div class="budgets_grid">
+
+  <% for budget in @all_year_budgets %>
+<div class="grid_item">
+  <ul>
+
+      <a href="/budgets/<%= budget.id %>/edit">
+        <li><%= budget.month_name %>:</li>
+        <li><%= budget.budget %></li>
+      </a>
+
+  </ul>
+  </div>
+
+  <% end %>
+
+
+
+</div>
+
+<div class="total_budget">
+
+  <h4>Total Year Budget:</h4>
+  <p><%= @total_year_budget %></p>
+
+</div>

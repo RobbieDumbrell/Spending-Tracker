@@ -2,25 +2,45 @@
 
 <form action="/transactions" method="post">
 
-  <label for="merchant-select">Select Merchant</label>
+  <label for="merchant-select">Select Merchant:</label>
+
+  <br>
+
   <select id="merchant-select" name="merchant_id">
     <% for merchant in @all_merchants %>
     <option value="<%= merchant.id %>"><%= merchant.name %></option>
     <% end %>
   </select>
 
-  <label for="category-select">Select Category</label>
+  <br>
+
+  <label for="category-select">Select Category:</label>
+
+  <br>
+
   <select id="category-select" name="category_id">
     <% for category in @all_categories %>
     <option value="<%= category.id %>"><%= category.type %></option>
     <% end %>
   </select>
 
-  <label for="amount-spent">Amount Spent</label>
+  <br>
+
+  <label for="amount-spent">Amount Spent:</label>
+
+  <br>
+
   <input type="number" name="amount_spent">
 
-  <label for="entry-date">Entry Date</label>
+  <br>
+
+  <label for="entry-date">Entry Date:</label>
+
+  <br>
+
   <input type="date" name="entry_date" value="<%= @today_date %>" >
+
+  <br>
 
   <input type="submit" value="POST TRANSACTION">
 

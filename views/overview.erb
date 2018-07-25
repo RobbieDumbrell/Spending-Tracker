@@ -1,88 +1,146 @@
 <h1><%= @year %> Overview</h1>
 
-<p><a href="/overviews/2018">2018</a></p>
-<p><a href="/overviews/2019">2019</a></p>
+<div class="year_select">
 
-<ul>
-  <li>January</li>
-  <li>Total Spend: <%= @jan_spend %></li>
-  <li>Budget: <%= @janbud.budget %></li>
-  <li>Difference: <%= @jandiff %></li>
-</ul>
+  <ul>
+    <li><a href="/overviews/2018">2018</a></li>
+    <li><a href="/overviews/2019">2019</a></li>
+  </ul>
 
-<ul>
-  <li>February</li>
-  <li>Total Spend: <%= @feb_spend %></li>
-  <li>Budget: <%= @febbud.budget %></li>
-  <li>Difference: <%= @febdiff %></li>
-</ul>
+</div>
 
-<ul>
-  <li>March</li>
-  <li>Total Spend: <%= @mar_spend %></li>
-  <li>Budget: <%= @marbud.budget %></li>
-  <li>Difference: <%= @mardiff %></li>
-</ul>
+<div class="overviews_grid">
 
-<ul>
-  <li>April</li>
-  <li>Total Spend: <%= @apr_spend %></li>
-  <li>Budget: <%= @aprbud.budget %></li>
-  <li>Difference: <%= @aprdiff %></li>
-</ul>
+  <div class="overview_grid_item">
 
-<ul>
-  <li>May</li>
-  <li>Total Spend: <%= @may_spend %></li>
-  <li>Budget: <%= @maybud.budget %></li>
-  <li>Difference: <%= @maydiff %></li>
-</ul>
+    <ul>
+      <li>January</li>
+      <li>Total Spend: <%= @jan_spend %></li>
+      <li>Budget: <%= @janbud.budget %></li>
+      <li>Difference: <%= @jandiff %></li>
+    </ul>
 
-<ul>
-  <li>June</li>
-  <li>Total Spend: <%= @jun_spend %></li>
-  <li>Budget: <%= @junbud.budget %></li>
-  <li>Difference: <%= @jundiff %></li>
-</ul>
+  </div>
 
-<ul>
-  <li>July</li>
-  <li>Total Spend: <%= @jul_spend %></li>
-  <li>Budget: <%= @julbud.budget %></li>
-  <li>Difference: <%= @juldiff %></li>
-</ul>
+  <div class="overview_grid_item">
 
-<ul>
-  <li>August</li>
-  <li>Total Spend: <%= @aug_spend %></li>
-  <li>Budget: <%= @augbud.budget %></li>
-  <li>Difference: <%= @augdiff %></li>
-</ul>
+    <ul>
+      <li>February</li>
+      <li>Total Spend: <%= @feb_spend %></li>
+      <li>Budget: <%= @febbud.budget %></li>
+      <li>Difference: <%= @febdiff %></li>
+    </ul>
 
-<ul>
-  <li>September</li>
-  <li>Total Spend: <%= @sep_spend %></li>
-  <li>Budget: <%= @sepbud.budget %></li>
-  <li>Difference: <%= @sepdiff %></li>
-</ul>
+  </div>
 
-<ul>
-  <li>October</li>
-  <li>Total Spend: <%= @oct_spend %></li>
-  <li>Budget: <%= @octbud.budget %></li>
-  <li>Difference: <%= @octdiff %></li>
-</ul>
+  <div class="overview_grid_item">
 
-<ul>
-  <li>November</li>
-  <li>Total Spend: <%= @nov_spend %></li>
-  <li>Budget: <%= @novbud.budget %></li>
-  <li>Difference: <%= @novdiff %></li>
-</ul>
+    <ul>
+      <li>March</li>
+      <li>Total Spend: <%= @mar_spend %></li>
+      <li>Budget: <%= @marbud.budget %></li>
+      <li>Difference: <%= @mardiff %></li>
+    </ul>
 
-<ul>
-  <li>December</li>
-  <li>Total Spend: <%= @dec_spend %></li>
-  <li>Budget: <%= @decbud.budget %></li>
-  <li>Difference: <%= @decdiff %></li>
-</ul>
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>April</li>
+      <li>Total Spend: <%= @apr_spend %></li>
+      <li>Budget: <%= @aprbud.budget %></li>
+      <li>Difference: <%= @aprdiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>May</li>
+      <li>Total Spend: <%= @may_spend %></li>
+      <li>Budget: <%= @maybud.budget %></li>
+      <li>Difference: <%= @maydiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>June</li>
+      <li>Total Spend: <%= @jun_spend %></li>
+      <li>Budget: <%= @junbud.budget %></li>
+      <li>Difference: <%= @jundiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>July</li>
+      <li>Total Spend: <%= @jul_spend %></li>
+      <li>Budget: <%= @julbud.budget %></li>
+      <li>Difference: <%= @juldiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>August</li>
+      <li>Total Spend: <%= @aug_spend %></li>
+      <li>Budget: <%= @augbud.budget %></li>
+      <li>Difference: <%= @augdiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>September</li>
+      <li>Total Spend: <%= @sep_spend %></li>
+      <li>Budget: <%= @sepbud.budget %></li>
+      <li>Difference: <%= @sepdiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>October</li>
+      <li>Total Spend: <%= @oct_spend %></li>
+      <li>Budget: <%= @octbud.budget %></li>
+      <li>Difference: <%= @octdiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>November</li>
+      <li>Total Spend: <%= @nov_spend %></li>
+      <li>Budget: <%= @novbud.budget %></li>
+      <li>Difference: <%= @novdiff %></li>
+    </ul>
+
+  </div>
+
+  <div class="overview_grid_item">
+
+    <ul>
+      <li>December</li>
+      <li>Total Spend: <%= @dec_spend %></li>
+      <li>Budget: <%= @decbud.budget %></li>
+      <li>Difference: <%= @decdiff %></li>
+    </ul>
+
+  </div>
+
+</div>

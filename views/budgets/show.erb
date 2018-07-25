@@ -1,10 +1,16 @@
-<ul>
-  <li><a href="/budgets/year/2018">2018</a></li>
-  <li><a href="/budgets/year/2019">2019</a></li>
-</ul>
-
 <h1><%= @specified_budget.year %></h1>
-<h1><%= @specified_budget.month_name %> Budget</h1>
-<h2><%= @specified_budget.budget %></h2>
+<h4><%= @specified_budget.month_name %></h4>
 
-<p><a href="/budgets/<%= @specified_budget.id %>/edit">EDIT BUDGET</a></p>
+<p class="show_budget">Budget: <%= @specified_budget.budget %></p>
+
+<div class="year_select">
+
+  <ul>
+    <li><a href="/budgets/year/2018">2018</a></li>
+    <li><a href="/budgets/year/2019">2019</a></li>
+  </ul>
+
+</div>
+
+
+<p id="add_button"><a href="/budgets/<%= @specified_budget.id %>/edit">EDIT BUDGET</a></p>

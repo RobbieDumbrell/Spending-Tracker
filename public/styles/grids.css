@@ -1,0 +1,49 @@
+.budgets_grid {
+  margin: 20px auto;
+  display: grid;
+  grid-column-gap: 5%;
+  grid-row-gap: 20px;
+  grid-template-columns: 21.25% 21.25% 21.25% 21.25%;
+  width: 75%;
+}
+
+.grid_item ul {
+  list-style-type: none;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.grid_item * {
+  background-color: #091540;
+}
+
+.grid_item li {
+  padding: 10px;
+}
+
+.grid_item ul:hover {
+  background-color: white;
+}
+
+.overviews_grid {
+  margin: 20px auto;
+  display: grid;
+  grid-column-gap: 5%;
+  grid-row-gap: 20px;
+  grid-template-columns: 21.25% 21.25% 21.25% 21.25%;
+  width: 75%;
+}
+
+.overview_grid_item ul {
+  list-style-type: none;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.overview_grid_item * {
+  background-color: #091540;
+}
+
+.overview_grid_item li {
+  padding: 10px;
+}

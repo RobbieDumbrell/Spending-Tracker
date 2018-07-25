@@ -13,6 +13,39 @@ input[type=text] {
   font-size: 18px;
 }
 
+input[type=number] {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ABD2FA;
+  color: black;
+  font-size: 18px;
+}
+
+input[type=date] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ABD2FA;
+  color: black;
+  font-size: 18px;
+}
+
+select {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ABD2FA;
+  color: black;
+  font-size: 18px;
+}
+
 input[type=submit] {
   background-color: green;
   color: white;
@@ -22,6 +55,10 @@ input[type=submit] {
   font-size: 30px;
   cursor: pointer;
 }
+
+
+
+
 
 #add_button {
   padding: 20px;

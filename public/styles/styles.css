@@ -57,6 +57,12 @@ h1 {
   padding: 10px;
 }
 
+h4 {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
 /* MERCHANT AND CATEGORY INDEX */
 
 .mer_cat_ul li {
@@ -114,6 +120,34 @@ h1 {
 }
 
 .year_select ul li a:hover {
+  background-color: black;
+  color: #ABD2FA;
+}
+
+.bigger_year_select ul {
+  list-style-type: none;
+  margin: 30px auto;
+  width: 40%;
+}
+
+.bigger_year_select ul li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.bigger_year_select ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 50px 100px;
+  text-decoration: none;
+  background-color: #ABD2FA;
+  font-weight: bold;
+  font-size: 2em;
+  border: 2px solid black;
+}
+
+.bigger_year_select ul li a:hover {
   background-color: black;
   color: #ABD2FA;
 }
@@ -223,4 +257,30 @@ h1 {
   background-color: red;
   color: black;
   padding: 5px;
+}
+
+.transaction {
+  margin-bottom: 30px;
+}
+
+.transaction * {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.transaction ul {
+  list-style-type: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.transaction ul li {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.show_budget {
+  padding: 20px;
+  font-size: 30px;
 }

@@ -1,16 +1,25 @@
 <h1>Edit Budget</h1>
 
-<h4>Current Budget:</h4>
-<ul>
-  <li><%= @specified_budget.year %></li>
-  <li><%= @specified_budget.month_name %></li>
-  <li><%= @specified_budget.budget %></li>
-</ul>
+<div class="transaction">
+
+  <h4>Current Budget:</h4>
+  <ul>
+    <li>Year: <%= @specified_budget.year %></li>
+    <li>Month: <%= @specified_budget.month_name %></li>
+    <li>Budget: <%= @specified_budget.budget %></li>
+  </ul>
+
+</div>
 
 <form class="" action="/budgets/<%= @specified_budget.id %>" method="post">
 
   <label for="budget">New Budget:</label>
+
+  <br>
+
   <input id="budget" type="number" name="budget">
+
+  <br>
 
   <input type="submit" value="UPDATE BUDGET">
 
