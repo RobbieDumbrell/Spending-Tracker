@@ -70,7 +70,12 @@
   <%= "difference_bad" %>
   <% end %>>
 
-  <h4>Amount left to spend:</h4>
+  <h4><% if @difference > 0 %>
+    Amount left to spend:
+    <% else %>
+    Amount over budget:
+    <% end %>
+  </h4>
   <p><%= @difference %></p>
 
 </div>
