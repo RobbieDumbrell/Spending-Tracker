@@ -87,7 +87,11 @@ h4 {
 /* ADD A THING BUTTONS */
 
 #add_button a {
-  background-color: green;
+  background-color: #006E51
+
+
+
+;
   color: white;
   padding: 5px;
   border: solid 2px black;
@@ -97,7 +101,11 @@ h4 {
 
 #add_button a:hover {
   background-color: white;
-  color: green;
+  color: #006E51
+
+
+
+;
 }
 
 .year_select ul {
@@ -219,42 +227,60 @@ h4 {
 
 .difference_good {
   padding: 10px;
-  background-color: green;
+  background-color: #006E51
+
+
+
+;
   display: inline-block;
   margin: 10px;
   border: 2px solid black;
 }
 
 .difference_good h4 {
-  background-color: green;
+  background-color: #006E51
+
+
+
+;
   text-decoration: underline;
   color: black;
   padding: 5px;
 }
 
 .difference_good p {
-  background-color: green;
+  background-color: #006E51
+
+
+
+;
   color: black;
   padding: 5px;
 }
 
 .difference_bad {
   padding: 10px;
-  background-color: red;
+  background-color: #cc0000
+
+;
   display: inline-block;
   margin: 10px;
   border: 2px solid black;
 }
 
 .difference_bad h4 {
-  background-color: red;
+  background-color: #cc0000
+
+;
   text-decoration: underline;
   color: black;
   padding: 5px;
 }
 
 .difference_bad p {
-  background-color: red;
+  background-color: #cc0000
+
+;
   color: black;
   padding: 5px;
 }

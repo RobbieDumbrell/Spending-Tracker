@@ -5,7 +5,8 @@
   <ul>
     <li>Merchant: <%= @merchant.name %></li>
     <li>Category: <%= @category.type %></li>
-    <li>Amount: <%= @specified_transaction.amount_spent %></li>
+    <li>Amount: <% number = @specified_transaction.amount_spent %>
+    <%= Formatter.pound_format(number) %> </li>
     <li>Date: <%= @specified_transaction.entry_date %></li>
   </ul>
 

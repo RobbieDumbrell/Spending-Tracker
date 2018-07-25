@@ -47,7 +47,8 @@
   <tr>
     <td><a href="/merchants/<%= Merchant.find(transaction.merchant_id).id %>"><%= Merchant.find(transaction.merchant_id).name %></a></td>
     <td><a href="/categories/<%= Category.find(transaction.category_id).id %>"><%= Category.find(transaction.category_id).type %></a></td>
-    <td><%= transaction.amount_spent %></td>
+    <td><% number = transaction.amount_spent %>
+    <%= Formatter.pound_format(number) %></td>
     <td><%= transaction.entry_date%></td>
     <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
   </tr>
@@ -60,14 +61,14 @@
 <div class="total_spend">
 
   <h4>Total Month Spend:</h4>
-  <p><%= @month_total_spend %></p>
+  <p><%= Formatter.pound_format(@month_total_spend) %></p>
 
 </div>
 
 <div class="total_budget">
 
   <h4>Monthly Budget:</h4>
-  <p><%= @month_budget.budget %></p>
+  <p><%= Formatter.pound_format(@month_budget.budget) %></p>
 
 </div>
 
@@ -78,12 +79,12 @@
   <% end %>>
 
   <h4><% if @difference > 0 %>
-    Amount left to spend:
+    Amount Left to Spend:
     <% else %>
-    Amount over budget:
+    Amount Over Budget:
     <% end %>
   </h4>
-  <p><%= @difference %></p>
+  <p><%= Formatter.pound_format(@difference) %></p>
 
 </div>
 

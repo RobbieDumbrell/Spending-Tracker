@@ -20,7 +20,8 @@
   <% category = Category.find(transaction.category_id) %>
   <tr>
     <td><a href="/categories/<%= category.id %>"><%= category.type %></a></td>
-    <td><%= transaction.amount_spent %></td>
+    <td><% number = transaction.amount_spent %>
+    <%= Formatter.pound_format(number) %></td>
     <td><%= transaction.entry_date%></td>
     <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
   </tr>

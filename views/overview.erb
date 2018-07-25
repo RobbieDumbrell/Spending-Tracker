@@ -11,134 +11,182 @@
 
 <div class="overviews_grid">
 
-  <div class="overview_grid_item">
+  <div class= <% if @jandiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>January</li>
-      <li>Total Spend: <%= @jan_spend %></li>
-      <li>Budget: <%= @janbud.budget %></li>
-      <li>Difference: <%= @jandiff %></li>
+      <li class="month">January</li>
+      <li>Total Spend: <%= Formatter.pound_format(@jan_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@janbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@jandiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @febdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>February</li>
-      <li>Total Spend: <%= @feb_spend %></li>
-      <li>Budget: <%= @febbud.budget %></li>
-      <li>Difference: <%= @febdiff %></li>
+      <li class="month">February</li>
+      <li>Total Spend: <%= Formatter.pound_format(@feb_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@febbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@febdiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @mardiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>March</li>
-      <li>Total Spend: <%= @mar_spend %></li>
-      <li>Budget: <%= @marbud.budget %></li>
-      <li>Difference: <%= @mardiff %></li>
+      <li class="month">March</li>
+      <li>Total Spend: <%= Formatter.pound_format(@mar_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@marbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@mardiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @aprdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>April</li>
-      <li>Total Spend: <%= @apr_spend %></li>
-      <li>Budget: <%= @aprbud.budget %></li>
-      <li>Difference: <%= @aprdiff %></li>
+      <li class="month">April</li>
+      <li>Total Spend: <%= Formatter.pound_format(@apr_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@aprbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@aprdiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @maydiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>May</li>
-      <li>Total Spend: <%= @may_spend %></li>
-      <li>Budget: <%= @maybud.budget %></li>
-      <li>Difference: <%= @maydiff %></li>
+      <li class="month">May</li>
+      <li>Total Spend: <%= Formatter.pound_format(@may_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@maybud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@maydiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @jundiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>June</li>
-      <li>Total Spend: <%= @jun_spend %></li>
-      <li>Budget: <%= @junbud.budget %></li>
-      <li>Difference: <%= @jundiff %></li>
+      <li class="month">June</li>
+      <li>Total Spend: <%= Formatter.pound_format(@jun_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@junbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@jundiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @juldiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>July</li>
-      <li>Total Spend: <%= @jul_spend %></li>
-      <li>Budget: <%= @julbud.budget %></li>
-      <li>Difference: <%= @juldiff %></li>
+      <li class="month">July</li>
+      <li>Total Spend: <%= Formatter.pound_format(@jul_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@julbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@juldiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @augdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>August</li>
-      <li>Total Spend: <%= @aug_spend %></li>
-      <li>Budget: <%= @augbud.budget %></li>
-      <li>Difference: <%= @augdiff %></li>
+      <li class="month">August</li>
+      <li>Total Spend: <%= Formatter.pound_format(@aug_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@augbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@augdiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @sepdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>September</li>
-      <li>Total Spend: <%= @sep_spend %></li>
-      <li>Budget: <%= @sepbud.budget %></li>
-      <li>Difference: <%= @sepdiff %></li>
+      <li class="month">September</li>
+      <li>Total Spend: <%= Formatter.pound_format(@sep_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@sepbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@sepdiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @octdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>October</li>
-      <li>Total Spend: <%= @oct_spend %></li>
-      <li>Budget: <%= @octbud.budget %></li>
-      <li>Difference: <%= @octdiff %></li>
+      <li class="month">October</li>
+      <li>Total Spend: <%= Formatter.pound_format(@oct_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@octbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@octdiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @novdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>November</li>
-      <li>Total Spend: <%= @nov_spend %></li>
-      <li>Budget: <%= @novbud.budget %></li>
-      <li>Difference: <%= @novdiff %></li>
+      <li class="month">November</li>
+      <li>Total Spend: <%= Formatter.pound_format(@nov_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@novbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@novdiff) %></li>
     </ul>
 
   </div>
 
-  <div class="overview_grid_item">
+  <div class= <% if @decdiff > 0 %>
+      <%= "overview_grid_item_good" %>
+      <% else %>
+      <%= "overview_grid_item_bad" %>
+      <% end %>>
 
     <ul>
-      <li>December</li>
-      <li>Total Spend: <%= @dec_spend %></li>
-      <li>Budget: <%= @decbud.budget %></li>
-      <li>Difference: <%= @decdiff %></li>
+      <li class="month">December</li>
+      <li>Total Spend: <%= Formatter.pound_format(@dec_spend) %></li>
+      <li>Budget: <%= Formatter.pound_format(@decbud.budget) %></li>
+      <li>Difference: <%= Formatter.pound_format(@decdiff) %></li>
     </ul>
 
   </div>

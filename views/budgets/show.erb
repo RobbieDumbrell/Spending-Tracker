@@ -1,7 +1,7 @@
 <h1><%= @specified_budget.year %></h1>
 <h4><%= @specified_budget.month_name %></h4>
 
-<p class="show_budget">Budget: <%= @specified_budget.budget %></p>
+<p class="show_budget">Budget: <%= Formatter.pound_format(@specified_budget.budget) %></p>
 
 <div class="year_select">
 

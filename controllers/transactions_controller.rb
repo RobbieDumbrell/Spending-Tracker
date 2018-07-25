@@ -4,6 +4,7 @@ require_relative('../models/transaction')
 require_relative('../models/merchant')
 require_relative('../models/category')
 require_relative('../models/budget')
+require_relative('../models/formatter')
 also_reload('../models/*')
 
 # Index Transactions

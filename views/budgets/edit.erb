@@ -6,7 +6,7 @@
   <ul>
     <li>Year: <%= @specified_budget.year %></li>
     <li>Month: <%= @specified_budget.month_name %></li>
-    <li>Budget: <%= @specified_budget.budget %></li>
+    <li>Budget: <%= Formatter.pound_format(@specified_budget.budget) %></li>
   </ul>
 
 </div>

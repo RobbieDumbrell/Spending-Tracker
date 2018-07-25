@@ -11,6 +11,7 @@ end
 
 get '/overviews/:year/?' do
   @year = params['year'].to_i
+
   @jan_spend = Transaction.total_month(1, params['year'])
   @feb_spend = Transaction.total_month(2, params['year'])
   @mar_spend = Transaction.total_month(3, params['year'])
@@ -49,6 +50,8 @@ get '/overviews/:year/?' do
   @octdiff = (@octbud.budget.to_i) - (@oct_spend.to_i)
   @novdiff = (@novbud.budget.to_i) - (@nov_spend.to_i)
   @decdiff = (@decbud.budget.to_i) - (@dec_spend.to_i)
+
+
 
   erb(:overview)
 end

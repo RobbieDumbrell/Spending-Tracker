@@ -20,7 +20,7 @@
 
       <a href="/budgets/<%= budget.id %>/edit">
         <li><%= budget.month_name %>:</li>
-        <li><%= budget.budget %></li>
+        <li><%= Formatter.pound_format(budget.budget) %></li>
       </a>
 
   </ul>
@@ -35,6 +35,6 @@
 <div class="total_budget">
 
   <h4>Total Year Budget:</h4>
-  <p><%= @total_year_budget %></p>
+  <p><%= Formatter.pound_format(@total_year_budget) %></p>
 
 </div>
