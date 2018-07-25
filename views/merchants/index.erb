@@ -16,11 +16,15 @@
 
 <% else %>
 
-<% for merchant in @all_merchants %>
-<ul class="mer_cat_ul">
-  <li><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
-</ul>
-<% end %>
+<div class="mercat_box">
+
+  <% for merchant in @all_merchants %>
+  <ul class="mer_cat_ul">
+    <li><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></li>
+  </ul>
+  <% end %>
+
+</div>
 
 <% end %>
 

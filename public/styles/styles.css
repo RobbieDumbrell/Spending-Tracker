@@ -84,6 +84,11 @@ h4 {
   color: #091540;
 }
 
+.mercat_box {
+  height: 400px;
+  overflow: scroll;
+}
+
 /* ADD A THING BUTTONS */
 
 #add_button a {
