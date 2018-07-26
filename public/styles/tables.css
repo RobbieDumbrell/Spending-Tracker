@@ -1,6 +1,7 @@
 .table_scroll {
   overflow-y: auto;
   max-height: 500px;
+  margin-top: 10px;
 }
 
 table {
@@ -9,7 +10,6 @@ table {
   align: center;
   border-collapse: collapse;
   width: 80%;
-  margin-top: 10px;
 }
 
 table, th, td {
