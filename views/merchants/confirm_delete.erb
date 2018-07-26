@@ -2,7 +2,7 @@
 
   <p>Are you sure you want to delete <%= @deleting_merchant.name %> from Merchants?</p>
 
-  <p>All transactions linked to this <%= @deleting_merchant.name %> will also be deleted.</p>
+  <p>All transactions linked to <%= @deleting_merchant.name %> will also be deleted.</p>
 
 </div>
 
@@ -12,3 +12,5 @@
   <input type="submit" value="CONFIRM DELETE">
 
 </form>
+
+<p id="add_button"><a href="/merchants/<%= @deleting_merchant.id %>">DO NOT DELETE</a></p>
