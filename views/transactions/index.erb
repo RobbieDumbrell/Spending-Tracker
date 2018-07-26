@@ -26,21 +26,21 @@
       <td><a href="/merchants/<%= Merchant.find(transaction.merchant_id).id %>"><%= Merchant.find(transaction.merchant_id).name %></a></td>
       <td><a href="/categories/<%= Category.find(transaction.category_id).id %>"><%= Category.find(transaction.category_id).type %></a></td>
       <td><% number = transaction.amount_spent %>
-      <%= Formatter.pound_format(number) %></td>
-      <td><%= transaction.entry_date%></td>
-      <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
-    </tr>
-    <% end %>
+        <%= Formatter.pound_format(number) %></td>
+        <td><%= transaction.entry_date%></td>
+        <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+      </tr>
+      <% end %>
 
-  </table>
+    </table>
 
-</div>
+  </div>
 
-<div class="total_spend">
+  <div class="total_spend">
 
-  <h4>Total Spend:</h4>
-  <p><%= Formatter.pound_format(@all_total_spend) %></p>
+    <h4>Total Spend:</h4>
+    <p><%= Formatter.pound_format(@all_total_spend) %></p>
 
-</div>
+  </div>
 
-<p id="add_button"><a href="/transactions/new">Add Transaction</a></p>
+  <p id="add_button"><a href="/transactions/new">Add Transaction</a></p>

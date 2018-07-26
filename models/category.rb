@@ -96,5 +96,4 @@ class Category
     return all_merchants
   end
 
-
 end

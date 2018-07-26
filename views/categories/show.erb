@@ -21,28 +21,28 @@
     <tr>
       <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
       <td><% number = transaction.amount_spent %>
-      <%= Formatter.pound_format(number) %></td>
-      <td><%= transaction.entry_date%></td>
-      <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
-    </tr>
-    <% end %>
+        <%= Formatter.pound_format(number) %></td>
+        <td><%= transaction.entry_date%></td>
+        <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+      </tr>
+      <% end %>
 
-  </table>
+    </table>
 
-</div>
+  </div>
 
-<% end %>
+  <% end %>
 
-<form class="" action="/categories/<%= @specified_category.id %>/edit/" method="get">
+  <form class="" action="/categories/<%= @specified_category.id %>/edit/" method="get">
 
-  <input type="submit" value="EDIT CATEGORY">
+    <input type="submit" value="EDIT CATEGORY">
 
-</form>
+  </form>
 
-<form class="delete_form" action="/categories/<%= @specified_category.id %>/delete/confirm/" method="get">
+  <form class="delete_form" action="/categories/<%= @specified_category.id %>/delete/confirm/" method="get">
 
-  <input type="submit" value="DELETE CATEGORY">
+    <input type="submit" value="DELETE CATEGORY">
 
-<p id="add_button"><a href="/transactions/new">ADD TRANSACTION</a></p>
+    <p id="add_button"><a href="/transactions/new">ADD TRANSACTION</a></p>
 
-</form>
+  </form>

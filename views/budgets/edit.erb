@@ -2,7 +2,7 @@
 
 <div class="transaction">
 
-  <h4>Current Budget:</h4>
+  <h4>Existing Budget:</h4>
   <ul>
     <li>Year: <%= @specified_budget.year %></li>
     <li>Month: <%= @specified_budget.month_name %></li>
@@ -10,6 +10,8 @@
   </ul>
 
 </div>
+
+<h4>Enter Changes to Budget:</h4>
 
 <form class="" action="/budgets/<%= @specified_budget.id %>" method="post">
 

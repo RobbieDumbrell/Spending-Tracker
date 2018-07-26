@@ -8,24 +8,24 @@
 
 <% if @searched_categories.count > 0 %>
 
-<% for category in @searched_categories %>
-<ul class="mer_cat_ul">
-  <li><a href="/categories/<%= category.id %>"><%= category.type %></a></li>
-</ul>
-<% end %>
-
-<% else %>
-
-<div class="mercat_box">
-
-  <% for category in @all_categories %>
+  <% for category in @searched_categories %>
   <ul class="mer_cat_ul">
     <li><a href="/categories/<%= category.id %>"><%= category.type %></a></li>
   </ul>
   <% end %>
 
-</div>
+  <% else %>
 
-<% end %>
+  <div class="mercat_box">
 
-<p id="add_button"><a href="/categories/new">ADD CATEGORY</a></p>
+    <% for category in @all_categories %>
+    <ul class="mer_cat_ul">
+      <li><a href="/categories/<%= category.id %>"><%= category.type %></a></li>
+    </ul>
+    <% end %>
+
+  </div>
+
+  <% end %>
+
+  <p id="add_button"><a href="/categories/new">ADD CATEGORY</a></p>

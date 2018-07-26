@@ -6,20 +6,20 @@
     <li>Merchant: <%= @merchant.name %></li>
     <li>Category: <%= @category.type %></li>
     <li>Amount: <% number = @specified_transaction.amount_spent %>
-    <%= Formatter.pound_format(number) %> </li>
-    <li>Date: <%= @specified_transaction.entry_date %></li>
-  </ul>
+      <%= Formatter.pound_format(number) %> </li>
+      <li>Date: <%= @specified_transaction.entry_date %></li>
+    </ul>
 
-</div>
+  </div>
 
-<form action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
+  <form action="/transactions/<%= @specified_transaction.id %>/edit/" method="get">
 
-  <input type="submit" value="EDIT TRANSACTION">
+    <input type="submit" value="EDIT TRANSACTION">
 
-</form>
+  </form>
 
-<form class="delete_form" action="/transactions/<%= @specified_transaction.id %>/delete/" method="post">
+  <form class="delete_form" action="/transactions/<%= @specified_transaction.id %>/delete/" method="post">
 
-  <input type="submit" value="DELETE TRANSACTION">
+    <input type="submit" value="DELETE TRANSACTION">
 
-</form>
+  </form>

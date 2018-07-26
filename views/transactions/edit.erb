@@ -8,56 +8,56 @@
     <li>Merchant Name: <%= @current_merchant.name %></li>
     <li>Category Type: <%= @current_category.type %></li>
     <li>Amount: <% number = @specified_transaction.amount_spent %>
-    <%= Formatter.pound_format(number) %> </li>
-    <li>Entry Date: <%= @specified_transaction.entry_date %></li>
-  </ul>
+      <%= Formatter.pound_format(number) %> </li>
+      <li>Entry Date: <%= @specified_transaction.entry_date %></li>
+    </ul>
 
-</div>
+  </div>
 
-<h4>Enter Changes to Transaction:</h4>
+  <h4>Enter Changes to Transaction:</h4>
 
-<form action="/transactions/<%= @specified_transaction.id %>" method="post">
+  <form action="/transactions/<%= @specified_transaction.id %>" method="post">
 
-  <label for="merchant-select">Select Merchant:</label>
+    <label for="merchant-select">Select Merchant:</label>
 
-  <br>
+    <br>
 
-  <select id="merchant-select" name="merchant_id">
-    <% for merchant in @all_merchants %>
-    <option value="<%= merchant.id %>" <%= 'selected' if @specified_transaction.merchant_id == merchant.id %>><%= merchant.name %></option>
-    <% end %>
-  </select>
+    <select id="merchant-select" name="merchant_id">
+      <% for merchant in @all_merchants %>
+      <option value="<%= merchant.id %>" <%= 'selected' if @specified_transaction.merchant_id == merchant.id %>><%= merchant.name %></option>
+      <% end %>
+    </select>
 
-  <br>
+    <br>
 
-  <label for="category-select">Select Category:</label>
+    <label for="category-select">Select Category:</label>
 
-  <br>
+    <br>
 
-  <select id="category-select" name="category_id">
-    <% for category in @all_categories %>
-    <option value="<%= category.id %>" <%= 'selected' if @specified_transaction.category_id == category.id %>><%= category.type %></option>
-    <% end %>
-  </select>
+    <select id="category-select" name="category_id">
+      <% for category in @all_categories %>
+      <option value="<%= category.id %>" <%= 'selected' if @specified_transaction.category_id == category.id %>><%= category.type %></option>
+      <% end %>
+    </select>
 
-  <br>
+    <br>
 
-  <label for="amount-spent">Amount Spent:</label>
+    <label for="amount-spent">Amount Spent:</label>
 
-  <br>
+    <br>
 
-  <input type="number" name="amount_spent" step="0.01" value="<%= @specified_transaction.amount_spent %>">
+    <input type="number" name="amount_spent" step="0.01" value="<%= @specified_transaction.amount_spent %>">
 
-  <br>
+    <br>
 
-  <label for="entry-date">Entry Date:</label>
+    <label for="entry-date">Entry Date:</label>
 
-  <br>
+    <br>
 
-  <input type="date" name="entry_date" value="<%= @specified_transaction.entry_date %>" >
+    <input type="date" name="entry_date" value="<%= @specified_transaction.entry_date %>" >
 
-  <br>
+    <br>
 
-  <input type="submit" value="UPDATE TRANSACTION">
+    <input type="submit" value="UPDATE TRANSACTION">
 
-</form>
+  </form>

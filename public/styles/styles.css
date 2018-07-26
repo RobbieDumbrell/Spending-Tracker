@@ -27,8 +27,8 @@ a {
 /* NAV BAR ON EVERY PAGE */
 
 nav ul {
-    list-style-type: none;
-    background-color: #091540;
+  list-style-type: none;
+  background-color: #091540;
 }
 
 nav li {
@@ -36,12 +36,12 @@ nav li {
 }
 
 nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 15px 30px;
-    text-decoration: none;
-    background-color: #091540;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 30px;
+  text-decoration: none;
+  background-color: #091540;
 }
 
 nav li a:hover {

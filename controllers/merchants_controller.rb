@@ -21,7 +21,7 @@ post '/merchants/?' do
   @new_merchant = Merchant.new(params)
   @new_merchant.save()
   redirect to '/merchants/?'
-  end
+end
 
 # Show Merchant
 get '/merchants/:id/?' do

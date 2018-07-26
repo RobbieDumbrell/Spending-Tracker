@@ -15,15 +15,15 @@
 <div class="budgets_grid">
 
   <% for budget in @all_year_budgets %>
-<div class="grid_item">
-  <ul>
+  <div class="grid_item">
+    <ul>
 
       <a href="/budgets/<%= budget.id %>/edit">
         <li><%= budget.month_name %>:</li>
         <li><%= Formatter.pound_format(budget.budget) %></li>
       </a>
 
-  </ul>
+    </ul>
   </div>
 
   <% end %>

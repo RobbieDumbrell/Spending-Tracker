@@ -2,47 +2,47 @@
 
 <% if @merchant_transactions.count == 0 %>
 
-  <p class="no_transactions">There are currently no transactions relating to <%= @specified_merchant.name %>.</p>
+<p class="no_transactions">There are currently no transactions relating to <%= @specified_merchant.name %>.</p>
 
 <% else %>
 
 <div class="table_scroll">
 
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Amount</th>
-    <th>Date</th>
-    <th>More</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>More</th>
+    </tr>
 
-  <% for transaction in @merchant_transactions %>
-  <% category = Category.find(transaction.category_id) %>
-  <tr>
-    <td><a href="/categories/<%= category.id %>"><%= category.type %></a></td>
-    <td><% number = transaction.amount_spent %>
-    <%= Formatter.pound_format(number) %></td>
-    <td><%= transaction.entry_date%></td>
-    <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
-  </tr>
+    <% for transaction in @merchant_transactions %>
+    <% category = Category.find(transaction.category_id) %>
+    <tr>
+      <td><a href="/categories/<%= category.id %>"><%= category.type %></a></td>
+      <td><% number = transaction.amount_spent %>
+        <%= Formatter.pound_format(number) %></td>
+        <td><%= transaction.entry_date%></td>
+        <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+      </tr>
+      <% end %>
+
+    </table>
+
+  </div>
+
   <% end %>
 
-</table>
+  <form class="edit_form" action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
 
-</div>
+    <input type="submit" value="EDIT MERCHANT">
 
-<% end %>
+  </form>
 
-<form class="edit_form" action="/merchants/<%= @specified_merchant.id %>/edit/" method="get">
+  <form class="delete_form" action="/merchants/<%= @specified_merchant.id %>/delete/confirm/" method="get">
 
-  <input type="submit" value="EDIT MERCHANT">
+    <input type="submit" value="DELETE MERCHANT">
 
-</form>
+  </form>
 
-<form class="delete_form" action="/merchants/<%= @specified_merchant.id %>/delete/confirm/" method="get">
-
-  <input type="submit" value="DELETE MERCHANT">
-
-</form>
-
-<p id="add_button"><a href="/transactions/new">ADD TRANSACTION</a></p>
+  <p id="add_button"><a href="/transactions/new">ADD TRANSACTION</a></p>

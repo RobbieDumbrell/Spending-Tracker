@@ -1,6 +1,10 @@
 <h1>Edit Category</h1>
 
-<p class="current_thing">Current Category Type: <%= @specified_category.type %></p>
+<h4>Current Category:</h4>
+
+<p class="current_thing"><%= @specified_category.type %></p>
+
+<h4>Enter Changes to Category:</h4>
 
 <form class="" action="/categories/<%= @specified_category.id %>" method="post">
 

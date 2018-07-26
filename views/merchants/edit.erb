@@ -1,10 +1,14 @@
 <h1>Edit Merchant</h1>
 
-<p class="current_thing">Current Merchant Name: <%= @specified_merchant.name %></p>
+<h4>Current Merchant:</h4>
+
+<p class="current_thing"><%= @specified_merchant.name %></p>
+
+<h4>Enter Changes to Merchant:</h4>
 
 <form action="/merchants/<%= @specified_merchant.id %>" method="post">
 
-  <label for="merchant_name">Enter New Merchant Name:</label>
+  <label for="merchant_name">New Merchant Name:</label>
   <br>
   <input id="merchant_name" type="text" name="name" required>
   <br>
