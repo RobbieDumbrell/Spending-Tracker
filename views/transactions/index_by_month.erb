@@ -34,58 +34,62 @@
 <p class="no_transactions">There are currently no transactions relating to <%= @month %>.</p>
 <% else  %>
 
-<table>
-  <tr>
-    <th>Merchant</th>
-    <th>Category</th>
-    <th>Amount</th>
-    <th>Date</th>
-    <th>More</th>
-  </tr>
+<div class="table_scroll">
 
-  <% for transaction in @month_transactions %>
-  <tr>
-    <td><a href="/merchants/<%= Merchant.find(transaction.merchant_id).id %>"><%= Merchant.find(transaction.merchant_id).name %></a></td>
-    <td><a href="/categories/<%= Category.find(transaction.category_id).id %>"><%= Category.find(transaction.category_id).type %></a></td>
-    <td><% number = transaction.amount_spent %>
-    <%= Formatter.pound_format(number) %></td>
-    <td><%= transaction.entry_date%></td>
-    <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
-  </tr>
+  <table>
+    <tr>
+      <th>Merchant</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>More</th>
+    </tr>
+
+    <% for transaction in @month_transactions %>
+    <tr>
+      <td><a href="/merchants/<%= Merchant.find(transaction.merchant_id).id %>"><%= Merchant.find(transaction.merchant_id).name %></a></td>
+      <td><a href="/categories/<%= Category.find(transaction.category_id).id %>"><%= Category.find(transaction.category_id).type %></a></td>
+      <td><% number = transaction.amount_spent %>
+        <%= Formatter.pound_format(number) %></td>
+        <td><%= transaction.entry_date%></td>
+        <td><a href="/transactions/<%= transaction.id %>">Options</a></td>
+      </tr>
+      <% end %>
+
+    </table>
+
+  </div>
+
   <% end %>
 
-</table>
+  <div class="total_spend">
 
-<% end %>
+    <h4>Total Month Spend:</h4>
+    <p><%= Formatter.pound_format(@month_total_spend) %></p>
 
-<div class="total_spend">
+  </div>
 
-  <h4>Total Month Spend:</h4>
-  <p><%= Formatter.pound_format(@month_total_spend) %></p>
+  <div class="total_budget">
 
-</div>
+    <h4>Monthly Budget:</h4>
+    <p><%= Formatter.pound_format(@month_budget) %></p>
 
-<div class="total_budget">
+  </div>
 
-  <h4>Monthly Budget:</h4>
-  <p><%= Formatter.pound_format(@month_budget) %></p>
-
-</div>
-
-<div class=<% if @difference > 0 %>
-  <%= "difference_good" %>
-  <% else %>
-  <%= "difference_bad" %>
-  <% end %>>
-
-  <h4><% if @difference > 0 %>
-    Amount Left to Spend:
+  <div class=<% if @difference > 0 %>
+    <%= "difference_good" %>
     <% else %>
-    Amount Over Budget:
-    <% end %>
-  </h4>
-  <p><%= Formatter.pound_format(@difference) %></p>
+    <%= "difference_bad" %>
+    <% end %>>
 
-</div>
+    <h4><% if @difference > 0 %>
+      Amount Left to Spend:
+      <% else %>
+      Amount Over Budget:
+      <% end %>
+    </h4>
+    <p><%= Formatter.pound_format(@difference) %></p>
 
-<p id="add_button"><a href="/transactions/new">Add Transaction</a></p>
+  </div>
+
+  <p id="add_button"><a href="/transactions/new">Add Transaction</a></p>
