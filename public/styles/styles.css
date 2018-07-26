@@ -92,11 +92,7 @@ h4 {
 /* ADD A THING BUTTONS */
 
 #add_button a {
-  background-color: #006E51
-
-
-
-;
+  background-color: #006E51;
   color: white;
   padding: 5px;
   border: solid 2px black;
@@ -106,12 +102,10 @@ h4 {
 
 #add_button a:hover {
   background-color: white;
-  color: #006E51
-
-
-
-;
+  color: #006E51;
 }
+
+/* SMALL YEAR SELECT BUTTONS */
 
 .year_select ul {
   list-style-type: none;
@@ -137,10 +131,16 @@ h4 {
   color: #ABD2FA;
 }
 
+/* YEAR SELECT BUTTONS FOR OVERVIEW & BUDGET */
+
+.bigger_year_select {
+  width: 100%;
+  margin: auto;
+}
+
 .bigger_year_select ul {
   list-style-type: none;
   margin: 30px auto;
-  width: 40%;
 }
 
 .bigger_year_select ul li {
@@ -151,7 +151,6 @@ h4 {
 .bigger_year_select ul li a {
   display: block;
   color: black;
-  text-align: center;
   padding: 50px 100px;
   text-decoration: none;
   background-color: #ABD2FA;
@@ -164,6 +163,8 @@ h4 {
   background-color: black;
   color: #ABD2FA;
 }
+
+/* MONTH SELECT BUTTONS */
 
 .month_select ul {
   list-style-type: none;
@@ -187,6 +188,8 @@ h4 {
   background-color: #ABD2FA;
   color: black;
 }
+
+/* SUMMARY BOXES */
 
 .total_spend {
   padding: 10px;
@@ -232,63 +235,47 @@ h4 {
 
 .difference_good {
   padding: 10px;
-  background-color: #006E51
-
-
-
-;
+  background-color: #006E51;
   display: inline-block;
   margin: 10px;
   border: 2px solid black;
 }
 
 .difference_good h4 {
-  background-color: #006E51
-
-
-
-;
+  background-color: #006E51;
   text-decoration: underline;
   color: black;
   padding: 5px;
 }
 
 .difference_good p {
-  background-color: #006E51
-
-
-
-;
+  background-color: #006E51;
   color: black;
   padding: 5px;
 }
 
 .difference_bad {
   padding: 10px;
-  background-color: #cc0000
-
-;
+  background-color: #cc0000;
   display: inline-block;
   margin: 10px;
   border: 2px solid black;
 }
 
 .difference_bad h4 {
-  background-color: #cc0000
-
-;
+  background-color: #cc0000;
   text-decoration: underline;
   color: black;
   padding: 5px;
 }
 
 .difference_bad p {
-  background-color: #cc0000
-
-;
+  background-color: #cc0000;
   color: black;
   padding: 5px;
 }
+
+/* TRANSACTION SHOW BOXES */
 
 .transaction {
   margin-bottom: 30px;

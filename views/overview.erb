@@ -14,19 +14,19 @@
 
   <% for month in @months_info %>
 
-  <div class= <% if month['month_diff'] > 0 %>
-      <%= "overview_grid_item_good" %>
-      <% else %>
-      <%= "overview_grid_item_bad" %>
-      <% end %>>
+  <div class= <% if month['month_diff'] >= 0 %>
+    <%= "overview_grid_item_good" %>
+    <% else %>
+    <%= "overview_grid_item_bad" %>
+    <% end %>>
 
-      <ul>
-        <li class="month"><%= month['month_name'] %></li>
-        <li>Total Spend: <%= Formatter.pound_format(month['month_spend']) %></li>
-        <li>Budget: <%= Formatter.pound_format(month['month_bud']) %></li>
-        <li>Difference: <%= Formatter.pound_format(month['month_diff']) %></li>
-      </ul>
+    <ul>
+      <li class="month"><%= month['month_name'] %></li>
+      <li>Total Spend: <%= Formatter.pound_format(month['month_spend']) %></li>
+      <li>Budget: <%= Formatter.pound_format(month['month_bud']) %></li>
+      <li>Difference: <%= Formatter.pound_format(month['month_diff']) %></li>
+    </ul>
 
-    </div>
+  </div>
 
-    <% end %>
+  <% end %>

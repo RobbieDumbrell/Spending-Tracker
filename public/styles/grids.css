@@ -47,11 +47,7 @@
 }
 
 .overview_grid_item_good * {
-  background-color: #006E51
-
-
-
-;
+  background-color: #006E51;
 }
 
 .overview_grid_item_good li {
@@ -65,9 +61,7 @@
 }
 
 .overview_grid_item_bad * {
-  background-color: #cc0000
-
-;
+  background-color: #cc0000;
 }
 
 .overview_grid_item_bad li {

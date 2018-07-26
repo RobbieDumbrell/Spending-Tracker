@@ -61,11 +61,7 @@ select {
 }
 
 input[type=submit] {
-  background-color: #006E51
-
-
-
-;
+  background-color: #006E51;
   color: white;
   padding: 5px;
   border: solid 2px black;
@@ -74,21 +70,13 @@ input[type=submit] {
   cursor: pointer;
 }
 
-
-
-
-
 #add_button {
   padding: 20px;
 }
 
 input[type=submit]:hover {
   background-color: white;
-  color: #006E51
-
-
-
-;
+  color: #006E51;
   cursor: pointer;
 }
 
@@ -97,16 +85,12 @@ label {
 }
 
 .delete_form input[type=submit] {
-  background-color: #cc0000
-
-;
+  background-color: #cc0000;
 }
 
 .delete_form input[type=submit]:hover {
   background-color: white;
-  color: #cc0000
-
-;
+  color: #cc0000;
 }
 
 .delete_message {
