@@ -14,3 +14,13 @@ https://robbie-spending-tracker.herokuapp.com/
 Alternatively, to run the app locally, run the following command in the terminal in the project root directory:
 `ruby app.rb`
 
+## How could it extended?
+
+- Graphical Analysis
+
+This project was deliberately created in Ruby to consolidate learning in that area, however I would extend this project further by incorporating graphical analysis of the transactional spends - potentially using Javascript and a JS library such as Highcharts.
+
+- Dynamic Budget and Overview selections 
+
+The Budget and Overview sections were extensions to the MVP, and could be improved upon further as the years 2018, 2019 and 2020 are hard-coded for viewing/editing. So, to future-proof the app, it would be much better to dynamically update the available budget and overview years as they come around.
+
