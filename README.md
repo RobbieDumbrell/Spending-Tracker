@@ -2,11 +2,11 @@
 
 ## What?
 
-This is a personal **Spending Tracker**, designed to be used for an individual or small company to input and track cash spends over time and against customizable Budgets, whilst assigning these spends to specified Merchants and Categories. Built using **Ruby**, **PostgreSQL** and **Sinatra** (a Ruby web framework).
+This is a personal **Spending Tracker**, designed to be used for an individual or small company to input and track cash spends over time, against customizable budgets, whilst assigning these spends to specified merchants and categories. Built using **Ruby**, **PostgreSQL** and **Sinatra** (a Ruby web framework).
 
 ## Why?
 
-This was a week-long solo project that I completed during my 16-week CodeClan course. This project acted as a tool to consolidate my learning of Ruby, PostgreSQL and core programming principles such as RESTful routes, OOP, and Entity Relationships. This is my first ever end-to-end application!
+This was a week-long solo project that I completed during my 16-week CodeClan course. This project acted as a tool to consolidate my learning of Ruby, PostgreSQL and core programming principles such as **RESTful routes**, **OOP**, and **Entity Relationships**. This is my first ever end-to-end application!
 
 ## How?
 
