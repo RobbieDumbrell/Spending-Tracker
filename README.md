@@ -1,5 +1,3 @@
-# spending_tracker-ruby_sinatra_project
-
 ## What is this?
 
 This is a personal **Spending Tracker**, designed to be used for an individual or small company to input and track cash spends over time, against customizable budgets, whilst assigning these spends to specified merchants and categories. Built using **Ruby**, **PostgreSQL** and **Sinatra** (a Ruby web framework).
