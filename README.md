@@ -14,7 +14,7 @@ https://robbie-spending-tracker.herokuapp.com/
 Alternatively, to run the app locally, run the following command in the terminal in the project root directory:
 `ruby app.rb`
 
-## How could it extended?
+## How could it be extended?
 
 - Graphical Analysis
 
