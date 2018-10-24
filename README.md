@@ -2,7 +2,7 @@
 
 ## What?
 
-This is a personal Spending Tracker, designed to be used for an individual or small company to input and track cash spends over time and against customizable Budgets, whilst assigning these spends to specified Merchants and Categories. Built using **Ruby**, **PostgreSQL** and **Sinatra** (a Ruby web framework).
+This is a personal **Spending Tracker**, designed to be used for an individual or small company to input and track cash spends over time and against customizable Budgets, whilst assigning these spends to specified Merchants and Categories. Built using **Ruby**, **PostgreSQL** and **Sinatra** (a Ruby web framework).
 
 ## Why?
 
