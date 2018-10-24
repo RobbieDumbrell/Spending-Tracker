@@ -11,6 +11,6 @@ This was a week-long solo project that I completed during my 16-week CodeClan co
 Take a look and have a play around with the app as deployed on Heroku here:
 https://robbie-spending-tracker.herokuapp.com/
 
-Alternatively, to run the app locally run the following command in the terminal in the project root directory:
+Alternatively, to run the app locally, run the following command in the terminal in the project root directory:
 `ruby app.rb`
 
